@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: fr.obeo.dsl.minidrone.design;singleton:=true
+Export-Package: fr.obeo.dsl.minidrone.design,fr.obeo.dsl.minidrone.des
+ ign.services
+Bundle-Name: fr.obeo.dsl.minidrone.design
+Bundle-Version: 1.0.0.201604120756
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.co
+ re.resources,fr.obeo.dsl.minidrone;bundle-version="1.0.0",org.eclipse
+ .sirius;bundle-version="4.0.0"
+Bundle-ManifestVersion: 2
+Bundle-Activator: fr.obeo.dsl.minidrone.design.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
