@@ -25,7 +25,7 @@ package fr.obeo.dsl.minidrone;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.obeo.dsl.minidrone.Jump#getJumpType <em>Jump Type</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.Jump#getMode <em>Mode</em>}</li>
  * </ul>
  *
  * @see fr.obeo.dsl.minidrone.MiniDronePackage#getJump()
@@ -34,31 +34,31 @@ package fr.obeo.dsl.minidrone;
  */
 public interface Jump extends Instruction {
 	/**
-	 * Returns the value of the '<em><b>Jump Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link fr.obeo.dsl.minidrone.JumpType}.
+	 * Returns the value of the '<em><b>Mode</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.obeo.dsl.minidrone.JumpMode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The height of the jump.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Jump Type</em>' attribute.
-	 * @see fr.obeo.dsl.minidrone.JumpType
-	 * @see #setJumpType(JumpType)
-	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getJump_JumpType()
+	 * @return the value of the '<em>Mode</em>' attribute.
+	 * @see fr.obeo.dsl.minidrone.JumpMode
+	 * @see #setMode(JumpMode)
+	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getJump_Mode()
 	 * @model
 	 * @generated
 	 */
-	JumpType getJumpType();
+	JumpMode getMode();
 
 	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.Jump#getJumpType <em>Jump Type</em>}' attribute.
+	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.Jump#getMode <em>Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Jump Type</em>' attribute.
-	 * @see fr.obeo.dsl.minidrone.JumpType
-	 * @see #getJumpType()
+	 * @param value the new value of the '<em>Mode</em>' attribute.
+	 * @see fr.obeo.dsl.minidrone.JumpMode
+	 * @see #getMode()
 	 * @generated
 	 */
-	void setJumpType(JumpType value);
+	void setMode(JumpMode value);
 
 } // Jump

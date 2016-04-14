@@ -11,6 +11,7 @@
  */
 package fr.obeo.dsl.minidrone.presentation;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -21,46 +22,59 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
+import org.eclipse.emf.common.CommonPlugin;
+
+import org.eclipse.emf.common.util.URI;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.xmi.XMLResource;
+
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
+
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
+
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
+
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
@@ -68,102 +82,119 @@ import fr.obeo.dsl.minidrone.MiniDroneFactory;
 import fr.obeo.dsl.minidrone.MiniDronePackage;
 import fr.obeo.dsl.minidrone.provider.MiniDroneEditPlugin;
 
+
+import org.eclipse.core.runtime.Path;
+
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
+
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
+
+
 /**
  * This is a simple wizard for creating a new model file.
- * <!-- begin-user-doc
- * --> <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
  * @generated
  */
 public class MiniDroneModelWizard extends Wizard implements INewWizard {
-    /**
+	/**
 	 * The supported extensions for created files.
-	 * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(MiniDroneEditorPlugin.INSTANCE.getString("_UI_MiniDroneEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
+	public static final List<String> FILE_EXTENSIONS =
+		Collections.unmodifiableList(Arrays.asList(MiniDroneEditorPlugin.INSTANCE.getString("_UI_MiniDroneEditorFilenameExtensions").split("\\s*,\\s*")));
 
-    /**
-     * A formatted list of supported file extensions, suitable for display. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public static final String FORMATTED_FILE_EXTENSIONS = MiniDroneEditorPlugin.INSTANCE.getString("_UI_MiniDroneEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	/**
+	 * A formatted list of supported file extensions, suitable for display.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String FORMATTED_FILE_EXTENSIONS =
+		MiniDroneEditorPlugin.INSTANCE.getString("_UI_MiniDroneEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
-    /**
+	/**
 	 * This caches an instance of the model package.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected MiniDronePackage miniDronePackage = MiniDronePackage.eINSTANCE;
+	protected MiniDronePackage miniDronePackage = MiniDronePackage.eINSTANCE;
 
-    /**
+	/**
 	 * This caches an instance of the model factory.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected MiniDroneFactory miniDroneFactory = miniDronePackage.getMiniDroneFactory();
+	protected MiniDroneFactory miniDroneFactory = miniDronePackage.getMiniDroneFactory();
 
-    /**
-     * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc
-     * -->
-     * 
-     * @generated
-     */
-    protected MiniDroneModelWizardNewFileCreationPage newFileCreationPage;
+	/**
+	 * This is the file creation page.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MiniDroneModelWizardNewFileCreationPage newFileCreationPage;
 
-    /**
+	/**
 	 * This is the initial object creation page.
-	 * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected MiniDroneModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected MiniDroneModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
-    /**
+	/**
 	 * Remember the selection during initialization for populating the default container.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected IStructuredSelection selection;
+	protected IStructuredSelection selection;
 
-    /**
+	/**
 	 * Remember the workbench during initialization.
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected IWorkbench workbench;
+	protected IWorkbench workbench;
 
-    /**
+	/**
 	 * Caches the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected List<String> initialObjectNames;
+	protected List<String> initialObjectNames;
 
-    /**
+	/**
 	 * This just records the information.
-	 * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void init(IWorkbench workbench, IStructuredSelection selection) {
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(MiniDroneEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MiniDroneEditorPlugin.INSTANCE.getImage("full/wizban/NewMiniDrone")));
 	}
 
-    /**
+	/**
 	 * Returns the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected Collection<String> getInitialObjectNames() {
+	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
 			for (EClassifier eClassifier : miniDronePackage.getEClassifiers()) {
@@ -179,25 +210,26 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 		return initialObjectNames;
 	}
 
-    /**
+	/**
 	 * Create a new model.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected EObject createInitialModel() {
+	protected EObject createInitialModel() {
 		EClass eClass = (EClass)miniDronePackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = miniDroneFactory.create(eClass);
 		return rootObject;
 	}
 
-    /**
+	/**
 	 * Do the work after everything is specified.
-	 * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public boolean performFinish() {
+	@Override
+	public boolean performFinish() {
 		try {
 			// Remember the file.
 			//
@@ -281,30 +313,31 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 		}
 	}
 
-    /**
+	/**
 	 * This is the one page of the wizard.
-	 * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public class MiniDroneModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
-        /**
+	public class MiniDroneModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+		/**
 		 * Pass in the selection.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        public MiniDroneModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public MiniDroneModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
-        /**
-         * The framework calls this to see if the file is correct. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
-         * 
-         * @generated
-         */
-        @Override
-        protected boolean validatePage() {
+		/**
+		 * The framework calls this to see if the file is correct.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		@Override
+		protected boolean validatePage() {
 			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
@@ -317,53 +350,60 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 			return false;
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        public IFile getModelFile() {
+		public IFile getModelFile() {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
-    }
+	}
 
-    /**
-     * This is the page where the type of object to create is selected. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public class MiniDroneModelWizardInitialObjectCreationPage extends WizardPage {
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * This is the page where the type of object to create is selected.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public class MiniDroneModelWizardInitialObjectCreationPage extends WizardPage {
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        protected Combo initialObjectField;
+		protected Combo initialObjectField;
 
-        /**
-         * @generated <!-- begin-user-doc --> <!-- end-user-doc -->
-         */
-        protected List<String> encodings;
+		/**
+		 * @generated
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		protected List<String> encodings;
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        protected Combo encodingField;
+		protected Combo encodingField;
 
-        /**
+		/**
 		 * Pass in the selection.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        public MiniDroneModelWizardInitialObjectCreationPage(String pageId) {
+		public MiniDroneModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        public void createControl(Composite parent) {
+		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
@@ -430,30 +470,34 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 			setControl(composite);
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        protected ModifyListener validator = new ModifyListener() {
+		protected ModifyListener validator =
+			new ModifyListener() {
 				public void modifyText(ModifyEvent e) {
 					setPageComplete(validatePage());
 				}
 			};
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        protected boolean validatePage() {
+		protected boolean validatePage() {
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        @Override
-        public void setVisible(boolean visible) {
+		@Override
+		public void setVisible(boolean visible) {
 			super.setVisible(visible);
 			if (visible) {
 				if (initialObjectField.getItemCount() == 1) {
@@ -467,11 +511,12 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 			}
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        public String getInitialObjectName() {
+		public String getInitialObjectName() {
 			String label = initialObjectField.getText();
 
 			for (String name : getInitialObjectNames()) {
@@ -482,21 +527,22 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 			return null;
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        public String getEncoding() {
+		public String getEncoding() {
 			return encodingField.getText();
 		}
 
-        /**
+		/**
 		 * Returns the label for the specified type name.
-		 * <!-- begin-user-doc
-         * --> <!-- end-user-doc -->
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        protected String getLabel(String typeName) {
+		protected String getLabel(String typeName) {
 			try {
 				return MiniDroneEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
@@ -506,11 +552,12 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 			return typeName;
 		}
 
-        /**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-        protected Collection<String> getEncodings() {
+		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
 				for (StringTokenizer stringTokenizer = new StringTokenizer(MiniDroneEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
@@ -519,16 +566,16 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 			}
 			return encodings;
 		}
-    }
+	}
 
-    /**
-     * The framework calls this to create the contents of the wizard. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public void addPages() {
+	/**
+	 * The framework calls this to create the contents of the wizard.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+		@Override
+	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new MiniDroneModelWizardNewFileCreationPage("Whatever", selection);
@@ -576,12 +623,13 @@ public class MiniDroneModelWizard extends Wizard implements INewWizard {
 		addPage(initialObjectCreationPage);
 	}
 
-    /**
+	/**
 	 * Get the file from the page.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public IFile getModelFile() {
+	public IFile getModelFile() {
 		return newFileCreationPage.getModelFile();
 	}
 

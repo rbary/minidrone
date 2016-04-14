@@ -9,24 +9,81 @@
   <foreignModel>minidrone.ecore</foreignModel>
   <genPackages prefix="MiniDrone" basePackage="fr.obeo.dsl" disposableProviderFactory="true"
       ecorePackage="minidrone.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//JumpType">
-      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpType/JUMP_LONG"/>
-      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpType/JUMP_HIGH"/>
-      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpType/JUMP_MAX"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//JumpMode">
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpMode/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpMode/HIGH"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpMode/MAX"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//PostureMode">
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//PostureMode/JUMPER"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//PostureMode/KICKER"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//PostureMode/AUTOBALANCE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//AudioMode">
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AudioMode/MONSTER"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AudioMode/INSECT"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AudioMode/ROBOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//AnimationMode">
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/SPIN"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/TOUCH"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/SHAKE"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/METRONOME"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/WAVE"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/SPINJUMP"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/SLALOM"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/SPINPOSTURE"/>
+      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//AnimationMode/SPIRAL"/>
     </genEnums>
     <genClasses ecoreClass="minidrone.ecore#//MiniDroneProgram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference minidrone.ecore#//MiniDroneProgram/instructions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//MiniDroneProgram/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//MiniDroneProgram/minidroneName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//MiniDroneProgram/speedPercentage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//MiniDroneProgram/volumePercentage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//MiniDroneProgram/audioMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//MiniDroneProgram/postureMode"/>
     </genClasses>
     <genClasses ecoreClass="minidrone.ecore#//Instruction"/>
-    <genClasses ecoreClass="minidrone.ecore#//Go">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Go/distance"/>
+    <genClasses ecoreClass="minidrone.ecore#//Straight">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Straight/distance"/>
     </genClasses>
     <genClasses ecoreClass="minidrone.ecore#//Turn">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Turn/angle"/>
     </genClasses>
     <genClasses ecoreClass="minidrone.ecore#//Jump">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Jump/jumpType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Jump/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//TakePicture"/>
+    <genClasses ecoreClass="minidrone.ecore#//RecordVideo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//RecordVideo/enable"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Speed">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Speed/percentage"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Posture">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Posture/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Volume">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Volume/percentage"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Timer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Timer/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference minidrone.ecore#//Block/instructions"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//AbstractInstruction"/>
+    <genClasses ecoreClass="minidrone.ecore#//Animation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Animation/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Loop">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference minidrone.ecore#//Loop/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//BooleanExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//BooleanExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="minidrone.ecore#//Audio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Audio/mode"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -11,16 +11,19 @@
  */
 package fr.obeo.dsl.minidrone.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import fr.obeo.dsl.minidrone.MiniDronePackage;
 import fr.obeo.dsl.minidrone.Turn;
 
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Turn</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Turn</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -31,66 +34,73 @@ import fr.obeo.dsl.minidrone.Turn;
  * @generated
  */
 public class TurnImpl extends InstructionImpl implements Turn {
-    /**
+	/**
 	 * The default value of the '{@link #getAngle() <em>Angle</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAngle()
 	 * @generated
 	 * @ordered
 	 */
-    protected static final int ANGLE_EDEFAULT = 0;
+	protected static final int ANGLE_EDEFAULT = 0;
 
-    /**
+	/**
 	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAngle()
 	 * @generated
 	 * @ordered
 	 */
-    protected int angle = ANGLE_EDEFAULT;
+	protected int angle = ANGLE_EDEFAULT;
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected TurnImpl() {
+	protected TurnImpl() {
 		super();
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    protected EClass eStaticClass() {
+	@Override
+	protected EClass eStaticClass() {
 		return MiniDronePackage.Literals.TURN;
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public int getAngle() {
+	public int getAngle() {
 		return angle;
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void setAngle(int newAngle) {
+	public void setAngle(int newAngle) {
 		int oldAngle = angle;
 		angle = newAngle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MiniDronePackage.TURN__ANGLE, oldAngle, angle));
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MiniDronePackage.TURN__ANGLE:
 				return getAngle();
@@ -98,12 +108,13 @@ public class TurnImpl extends InstructionImpl implements Turn {
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public void eSet(int featureID, Object newValue) {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MiniDronePackage.TURN__ANGLE:
 				setAngle((Integer)newValue);
@@ -112,12 +123,13 @@ public class TurnImpl extends InstructionImpl implements Turn {
 		super.eSet(featureID, newValue);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public void eUnset(int featureID) {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MiniDronePackage.TURN__ANGLE:
 				setAngle(ANGLE_EDEFAULT);
@@ -126,12 +138,13 @@ public class TurnImpl extends InstructionImpl implements Turn {
 		super.eUnset(featureID);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public boolean eIsSet(int featureID) {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MiniDronePackage.TURN__ANGLE:
 				return angle != ANGLE_EDEFAULT;
@@ -139,12 +152,13 @@ public class TurnImpl extends InstructionImpl implements Turn {
 		return super.eIsSet(featureID);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public String toString() {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
@@ -154,4 +168,4 @@ public class TurnImpl extends InstructionImpl implements Turn {
 		return result.toString();
 	}
 
-} // TurnImpl
+} //TurnImpl

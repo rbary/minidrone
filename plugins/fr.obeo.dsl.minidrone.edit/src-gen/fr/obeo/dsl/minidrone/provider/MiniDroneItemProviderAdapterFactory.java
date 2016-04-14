@@ -104,26 +104,26 @@ public class MiniDroneItemProviderAdapterFactory extends MiniDroneAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Go} instances.
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Straight} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GoItemProvider goItemProvider;
+	protected StraightItemProvider straightItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Go}.
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Straight}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGoAdapter() {
-		if (goItemProvider == null) {
-			goItemProvider = new GoItemProvider(this);
+	public Adapter createStraightAdapter() {
+		if (straightItemProvider == null) {
+			straightItemProvider = new StraightItemProvider(this);
 		}
 
-		return goItemProvider;
+		return straightItemProvider;
 	}
 
 	/**
@@ -170,6 +170,259 @@ public class MiniDroneItemProviderAdapterFactory extends MiniDroneAdapterFactory
 		}
 
 		return jumpItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.TakePicture} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TakePictureItemProvider takePictureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.TakePicture}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTakePictureAdapter() {
+		if (takePictureItemProvider == null) {
+			takePictureItemProvider = new TakePictureItemProvider(this);
+		}
+
+		return takePictureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.RecordVideo} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RecordVideoItemProvider recordVideoItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.RecordVideo}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRecordVideoAdapter() {
+		if (recordVideoItemProvider == null) {
+			recordVideoItemProvider = new RecordVideoItemProvider(this);
+		}
+
+		return recordVideoItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Speed} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SpeedItemProvider speedItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Speed}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSpeedAdapter() {
+		if (speedItemProvider == null) {
+			speedItemProvider = new SpeedItemProvider(this);
+		}
+
+		return speedItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Posture} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PostureItemProvider postureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Posture}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPostureAdapter() {
+		if (postureItemProvider == null) {
+			postureItemProvider = new PostureItemProvider(this);
+		}
+
+		return postureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Volume} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VolumeItemProvider volumeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Volume}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVolumeAdapter() {
+		if (volumeItemProvider == null) {
+			volumeItemProvider = new VolumeItemProvider(this);
+		}
+
+		return volumeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Timer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TimerItemProvider timerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Timer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTimerAdapter() {
+		if (timerItemProvider == null) {
+			timerItemProvider = new TimerItemProvider(this);
+		}
+
+		return timerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Block} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BlockItemProvider blockItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Block}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBlockAdapter() {
+		if (blockItemProvider == null) {
+			blockItemProvider = new BlockItemProvider(this);
+		}
+
+		return blockItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Animation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AnimationItemProvider animationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Animation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAnimationAdapter() {
+		if (animationItemProvider == null) {
+			animationItemProvider = new AnimationItemProvider(this);
+		}
+
+		return animationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Loop} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LoopItemProvider loopItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Loop}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLoopAdapter() {
+		if (loopItemProvider == null) {
+			loopItemProvider = new LoopItemProvider(this);
+		}
+
+		return loopItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.BooleanExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanExpressionItemProvider booleanExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.BooleanExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBooleanExpressionAdapter() {
+		if (booleanExpressionItemProvider == null) {
+			booleanExpressionItemProvider = new BooleanExpressionItemProvider(this);
+		}
+
+		return booleanExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.obeo.dsl.minidrone.Audio} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AudioItemProvider audioItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.obeo.dsl.minidrone.Audio}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAudioAdapter() {
+		if (audioItemProvider == null) {
+			audioItemProvider = new AudioItemProvider(this);
+		}
+
+		return audioItemProvider;
 	}
 
 	/**
@@ -272,9 +525,20 @@ public class MiniDroneItemProviderAdapterFactory extends MiniDroneAdapterFactory
 	 */
 	public void dispose() {
 		if (miniDroneProgramItemProvider != null) miniDroneProgramItemProvider.dispose();
-		if (goItemProvider != null) goItemProvider.dispose();
+		if (straightItemProvider != null) straightItemProvider.dispose();
 		if (turnItemProvider != null) turnItemProvider.dispose();
 		if (jumpItemProvider != null) jumpItemProvider.dispose();
+		if (takePictureItemProvider != null) takePictureItemProvider.dispose();
+		if (recordVideoItemProvider != null) recordVideoItemProvider.dispose();
+		if (speedItemProvider != null) speedItemProvider.dispose();
+		if (postureItemProvider != null) postureItemProvider.dispose();
+		if (volumeItemProvider != null) volumeItemProvider.dispose();
+		if (timerItemProvider != null) timerItemProvider.dispose();
+		if (blockItemProvider != null) blockItemProvider.dispose();
+		if (animationItemProvider != null) animationItemProvider.dispose();
+		if (loopItemProvider != null) loopItemProvider.dispose();
+		if (booleanExpressionItemProvider != null) booleanExpressionItemProvider.dispose();
+		if (audioItemProvider != null) audioItemProvider.dispose();
 	}
 
 }

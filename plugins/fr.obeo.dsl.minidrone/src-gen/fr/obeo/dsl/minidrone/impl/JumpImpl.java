@@ -11,148 +11,162 @@
  */
 package fr.obeo.dsl.minidrone.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import fr.obeo.dsl.minidrone.Jump;
-import fr.obeo.dsl.minidrone.JumpType;
+import fr.obeo.dsl.minidrone.JumpMode;
 import fr.obeo.dsl.minidrone.MiniDronePackage;
 
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Jump</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Jump</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.obeo.dsl.minidrone.impl.JumpImpl#getJumpType <em>Jump Type</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.impl.JumpImpl#getMode <em>Mode</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class JumpImpl extends InstructionImpl implements Jump {
-    /**
-	 * The default value of the '{@link #getJumpType() <em>Jump Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getJumpType()
+	/**
+	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
 	 * @generated
 	 * @ordered
 	 */
-    protected static final JumpType JUMP_TYPE_EDEFAULT = JumpType.JUMP_LONG;
+	protected static final JumpMode MODE_EDEFAULT = JumpMode.LONG;
 
-    /**
-	 * The cached value of the '{@link #getJumpType() <em>Jump Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getJumpType()
+	/**
+	 * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
 	 * @generated
 	 * @ordered
 	 */
-    protected JumpType jumpType = JUMP_TYPE_EDEFAULT;
+	protected JumpMode mode = MODE_EDEFAULT;
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    protected JumpImpl() {
+	protected JumpImpl() {
 		super();
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    protected EClass eStaticClass() {
+	@Override
+	protected EClass eStaticClass() {
 		return MiniDronePackage.Literals.JUMP;
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public JumpType getJumpType() {
-		return jumpType;
+	public JumpMode getMode() {
+		return mode;
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void setJumpType(JumpType newJumpType) {
-		JumpType oldJumpType = jumpType;
-		jumpType = newJumpType == null ? JUMP_TYPE_EDEFAULT : newJumpType;
+	public void setMode(JumpMode newMode) {
+		JumpMode oldMode = mode;
+		mode = newMode == null ? MODE_EDEFAULT : newMode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MiniDronePackage.JUMP__JUMP_TYPE, oldJumpType, jumpType));
+			eNotify(new ENotificationImpl(this, Notification.SET, MiniDronePackage.JUMP__MODE, oldMode, mode));
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MiniDronePackage.JUMP__JUMP_TYPE:
-				return getJumpType();
+			case MiniDronePackage.JUMP__MODE:
+				return getMode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public void eSet(int featureID, Object newValue) {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MiniDronePackage.JUMP__JUMP_TYPE:
-				setJumpType((JumpType)newValue);
+			case MiniDronePackage.JUMP__MODE:
+				setMode((JumpMode)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public void eUnset(int featureID) {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MiniDronePackage.JUMP__JUMP_TYPE:
-				setJumpType(JUMP_TYPE_EDEFAULT);
+			case MiniDronePackage.JUMP__MODE:
+				setMode(MODE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public boolean eIsSet(int featureID) {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MiniDronePackage.JUMP__JUMP_TYPE:
-				return jumpType != JUMP_TYPE_EDEFAULT;
+			case MiniDronePackage.JUMP__MODE:
+				return mode != MODE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
-    /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    @Override
-    public String toString() {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (jumpType: ");
-		result.append(jumpType);
+		result.append(" (mode: ");
+		result.append(mode);
 		result.append(')');
 		return result.toString();
 	}
 
-} // JumpImpl
+} //JumpImpl

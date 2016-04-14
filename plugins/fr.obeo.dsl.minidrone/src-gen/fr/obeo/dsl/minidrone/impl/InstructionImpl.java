@@ -13,8 +13,8 @@ package fr.obeo.dsl.minidrone.impl;
 
 import fr.obeo.dsl.minidrone.Instruction;
 import fr.obeo.dsl.minidrone.MiniDronePackage;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class InstructionImpl extends MinimalEObjectImpl.Container implements Instruction {
+public abstract class InstructionImpl extends AbstractInstructionImpl implements Instruction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -11,7 +11,6 @@
  */
 package fr.obeo.dsl.minidrone;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +26,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Instruction extends EObject {
-
+public interface Instruction extends AbstractInstruction {
 } // Instruction

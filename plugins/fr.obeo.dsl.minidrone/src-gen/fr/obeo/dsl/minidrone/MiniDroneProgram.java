@@ -29,7 +29,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getInstructions <em>Instructions</em>}</li>
- *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getName <em>Name</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getMinidroneName <em>Minidrone Name</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getSpeedPercentage <em>Speed Percentage</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getVolumePercentage <em>Volume Percentage</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getAudioMode <em>Audio Mode</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getPostureMode <em>Posture Mode</em>}</li>
  * </ul>
  *
  * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram()
@@ -39,7 +43,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface MiniDroneProgram extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-	 * The list contents are of type {@link fr.obeo.dsl.minidrone.Instruction}.
+	 * The list contents are of type {@link fr.obeo.dsl.minidrone.AbstractInstruction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -50,31 +54,142 @@ public interface MiniDroneProgram extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Instruction> getInstructions();
+	EList<AbstractInstruction> getInstructions();
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Minidrone Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Minidrone Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The name of the program.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram_Name()
+	 * @return the value of the '<em>Minidrone Name</em>' attribute.
+	 * @see #setMinidroneName(String)
+	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram_MinidroneName()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	String getMinidroneName();
 
 	/**
-	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getMinidroneName <em>Minidrone Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Minidrone Name</em>' attribute.
+	 * @see #getMinidroneName()
 	 * @generated
 	 */
-	void setName(String value);
+	void setMinidroneName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Speed Percentage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Speed Percentage</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Speed Percentage</em>' attribute.
+	 * @see #setSpeedPercentage(int)
+	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram_SpeedPercentage()
+	 * @model id="true"
+	 * @generated
+	 */
+	int getSpeedPercentage();
+
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getSpeedPercentage <em>Speed Percentage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Speed Percentage</em>' attribute.
+	 * @see #getSpeedPercentage()
+	 * @generated
+	 */
+	void setSpeedPercentage(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Volume Percentage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Volume Percentage</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Volume Percentage</em>' attribute.
+	 * @see #setVolumePercentage(int)
+	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram_VolumePercentage()
+	 * @model
+	 * @generated
+	 */
+	int getVolumePercentage();
+
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getVolumePercentage <em>Volume Percentage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Volume Percentage</em>' attribute.
+	 * @see #getVolumePercentage()
+	 * @generated
+	 */
+	void setVolumePercentage(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Audio Mode</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.obeo.dsl.minidrone.AudioMode}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Audio Mode</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Audio Mode</em>' attribute.
+	 * @see fr.obeo.dsl.minidrone.AudioMode
+	 * @see #setAudioMode(AudioMode)
+	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram_AudioMode()
+	 * @model
+	 * @generated
+	 */
+	AudioMode getAudioMode();
+
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getAudioMode <em>Audio Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Audio Mode</em>' attribute.
+	 * @see fr.obeo.dsl.minidrone.AudioMode
+	 * @see #getAudioMode()
+	 * @generated
+	 */
+	void setAudioMode(AudioMode value);
+
+	/**
+	 * Returns the value of the '<em><b>Posture Mode</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.obeo.dsl.minidrone.PostureMode}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Posture Mode</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Posture Mode</em>' attribute.
+	 * @see fr.obeo.dsl.minidrone.PostureMode
+	 * @see #setPostureMode(PostureMode)
+	 * @see fr.obeo.dsl.minidrone.MiniDronePackage#getMiniDroneProgram_PostureMode()
+	 * @model
+	 * @generated
+	 */
+	PostureMode getPostureMode();
+
+	/**
+	 * Sets the value of the '{@link fr.obeo.dsl.minidrone.MiniDroneProgram#getPostureMode <em>Posture Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Posture Mode</em>' attribute.
+	 * @see fr.obeo.dsl.minidrone.PostureMode
+	 * @see #getPostureMode()
+	 * @generated
+	 */
+	void setPostureMode(PostureMode value);
 
 } // MiniDroneProgram

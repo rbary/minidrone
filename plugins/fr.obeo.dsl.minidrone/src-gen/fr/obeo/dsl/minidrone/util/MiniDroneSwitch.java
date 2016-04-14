@@ -84,13 +84,15 @@ public class MiniDroneSwitch<T> extends Switch<T> {
 			case MiniDronePackage.INSTRUCTION: {
 				Instruction instruction = (Instruction)theEObject;
 				T result = caseInstruction(instruction);
+				if (result == null) result = caseAbstractInstruction(instruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MiniDronePackage.GO: {
-				Go go = (Go)theEObject;
-				T result = caseGo(go);
-				if (result == null) result = caseInstruction(go);
+			case MiniDronePackage.STRAIGHT: {
+				Straight straight = (Straight)theEObject;
+				T result = caseStraight(straight);
+				if (result == null) result = caseInstruction(straight);
+				if (result == null) result = caseAbstractInstruction(straight);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,6 +100,7 @@ public class MiniDroneSwitch<T> extends Switch<T> {
 				Turn turn = (Turn)theEObject;
 				T result = caseTurn(turn);
 				if (result == null) result = caseInstruction(turn);
+				if (result == null) result = caseAbstractInstruction(turn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,6 +108,98 @@ public class MiniDroneSwitch<T> extends Switch<T> {
 				Jump jump = (Jump)theEObject;
 				T result = caseJump(jump);
 				if (result == null) result = caseInstruction(jump);
+				if (result == null) result = caseAbstractInstruction(jump);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.TAKE_PICTURE: {
+				TakePicture takePicture = (TakePicture)theEObject;
+				T result = caseTakePicture(takePicture);
+				if (result == null) result = caseInstruction(takePicture);
+				if (result == null) result = caseAbstractInstruction(takePicture);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.RECORD_VIDEO: {
+				RecordVideo recordVideo = (RecordVideo)theEObject;
+				T result = caseRecordVideo(recordVideo);
+				if (result == null) result = caseInstruction(recordVideo);
+				if (result == null) result = caseAbstractInstruction(recordVideo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.SPEED: {
+				Speed speed = (Speed)theEObject;
+				T result = caseSpeed(speed);
+				if (result == null) result = caseInstruction(speed);
+				if (result == null) result = caseAbstractInstruction(speed);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.POSTURE: {
+				Posture posture = (Posture)theEObject;
+				T result = casePosture(posture);
+				if (result == null) result = caseInstruction(posture);
+				if (result == null) result = caseAbstractInstruction(posture);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.VOLUME: {
+				Volume volume = (Volume)theEObject;
+				T result = caseVolume(volume);
+				if (result == null) result = caseInstruction(volume);
+				if (result == null) result = caseAbstractInstruction(volume);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.TIMER: {
+				Timer timer = (Timer)theEObject;
+				T result = caseTimer(timer);
+				if (result == null) result = caseInstruction(timer);
+				if (result == null) result = caseAbstractInstruction(timer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.BLOCK: {
+				Block block = (Block)theEObject;
+				T result = caseBlock(block);
+				if (result == null) result = caseAbstractInstruction(block);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.ABSTRACT_INSTRUCTION: {
+				AbstractInstruction abstractInstruction = (AbstractInstruction)theEObject;
+				T result = caseAbstractInstruction(abstractInstruction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.ANIMATION: {
+				Animation animation = (Animation)theEObject;
+				T result = caseAnimation(animation);
+				if (result == null) result = caseInstruction(animation);
+				if (result == null) result = caseAbstractInstruction(animation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.LOOP: {
+				Loop loop = (Loop)theEObject;
+				T result = caseLoop(loop);
+				if (result == null) result = caseBlock(loop);
+				if (result == null) result = caseAbstractInstruction(loop);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.BOOLEAN_EXPRESSION: {
+				BooleanExpression booleanExpression = (BooleanExpression)theEObject;
+				T result = caseBooleanExpression(booleanExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MiniDronePackage.AUDIO: {
+				Audio audio = (Audio)theEObject;
+				T result = caseAudio(audio);
+				if (result == null) result = caseInstruction(audio);
+				if (result == null) result = caseAbstractInstruction(audio);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,17 +238,17 @@ public class MiniDroneSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Go</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Straight</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Go</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Straight</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGo(Go object) {
+	public T caseStraight(Straight object) {
 		return null;
 	}
 
@@ -184,6 +279,186 @@ public class MiniDroneSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseJump(Jump object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Take Picture</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Take Picture</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTakePicture(TakePicture object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Record Video</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Record Video</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRecordVideo(RecordVideo object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Speed</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Speed</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpeed(Speed object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Posture</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Posture</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePosture(Posture object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Volume</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Volume</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVolume(Volume object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Timer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Timer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimer(Timer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Block</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBlock(Block object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractInstruction(AbstractInstruction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Animation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Animation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnimation(Animation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Loop</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoop(Loop object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanExpression(BooleanExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Audio</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Audio</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAudio(Audio object) {
 		return null;
 	}
 

@@ -6,23 +6,24 @@
       <details key="documentation" value="Represent a program allowing to pilot a minidrone (Jumping Sumo or Rolling Spider)."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
-        eType="#//Instruction" containment="true">
+        eType="#//AbstractInstruction" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The referenced instructions contained in a program."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The name of the program."/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minidroneName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speedPercentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="volumePercentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="audioMode" eType="#//AudioMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postureMode" eType="#//PostureMode"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true" eSuperTypes="#//AbstractInstruction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represent a program instruction used to send command to the minidrone."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Go" eSuperTypes="#//Instruction">
+  <eClassifiers xsi:type="ecore:EClass" name="Straight" eSuperTypes="#//Instruction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A program instruction which send go backward/forward command to the minidrone."/>
     </eAnnotations>
@@ -46,18 +47,74 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A program instruction which send a jump command to the minidrone. This command is specific to the Jumping Sumo."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jumpType" eType="#//JumpType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//JumpMode">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The height of the jump."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="JumpType">
+  <eClassifiers xsi:type="ecore:EEnum" name="JumpMode">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Enumeration of jump types (only for Jumping Sumo)"/>
     </eAnnotations>
-    <eLiterals name="JUMP_LONG"/>
-    <eLiterals name="JUMP_HIGH" value="1"/>
-    <eLiterals name="JUMP_MAX" value="2"/>
+    <eLiterals name="LONG"/>
+    <eLiterals name="HIGH" value="1"/>
+    <eLiterals name="MAX" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PostureMode">
+    <eLiterals name="JUMPER"/>
+    <eLiterals name="KICKER" value="1"/>
+    <eLiterals name="AUTOBALANCE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AudioMode">
+    <eLiterals name="MONSTER"/>
+    <eLiterals name="INSECT" value="1"/>
+    <eLiterals name="ROBOT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TakePicture" eSuperTypes="#//Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RecordVideo" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Speed" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Posture" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//PostureMode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Volume" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Timer" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//AbstractInstruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
+        eType="#//AbstractInstruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractInstruction" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Animation" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//AnimationMode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//Block">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="#//BooleanExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AnimationMode">
+    <eLiterals name="SPIN"/>
+    <eLiterals name="TOUCH" value="1"/>
+    <eLiterals name="SHAKE" value="2" literal="SHAKE"/>
+    <eLiterals name="METRONOME" value="3"/>
+    <eLiterals name="WAVE" value="4"/>
+    <eLiterals name="SPINJUMP" value="5"/>
+    <eLiterals name="SLALOM" value="6"/>
+    <eLiterals name="SPINPOSTURE" value="7" literal="SPINPOSTURE"/>
+    <eLiterals name="SPIRAL" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Audio" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//AudioMode"/>
   </eClassifiers>
 </ecore:EPackage>

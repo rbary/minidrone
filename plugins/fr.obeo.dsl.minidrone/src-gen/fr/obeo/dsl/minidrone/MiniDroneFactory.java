@@ -40,13 +40,13 @@ public interface MiniDroneFactory extends EFactory {
 	MiniDroneProgram createMiniDroneProgram();
 
 	/**
-	 * Returns a new object of class '<em>Go</em>'.
+	 * Returns a new object of class '<em>Straight</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Go</em>'.
+	 * @return a new object of class '<em>Straight</em>'.
 	 * @generated
 	 */
-	Go createGo();
+	Straight createStraight();
 
 	/**
 	 * Returns a new object of class '<em>Turn</em>'.
@@ -65,6 +65,105 @@ public interface MiniDroneFactory extends EFactory {
 	 * @generated
 	 */
 	Jump createJump();
+
+	/**
+	 * Returns a new object of class '<em>Take Picture</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Take Picture</em>'.
+	 * @generated
+	 */
+	TakePicture createTakePicture();
+
+	/**
+	 * Returns a new object of class '<em>Record Video</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Record Video</em>'.
+	 * @generated
+	 */
+	RecordVideo createRecordVideo();
+
+	/**
+	 * Returns a new object of class '<em>Speed</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Speed</em>'.
+	 * @generated
+	 */
+	Speed createSpeed();
+
+	/**
+	 * Returns a new object of class '<em>Posture</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Posture</em>'.
+	 * @generated
+	 */
+	Posture createPosture();
+
+	/**
+	 * Returns a new object of class '<em>Volume</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Volume</em>'.
+	 * @generated
+	 */
+	Volume createVolume();
+
+	/**
+	 * Returns a new object of class '<em>Timer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Timer</em>'.
+	 * @generated
+	 */
+	Timer createTimer();
+
+	/**
+	 * Returns a new object of class '<em>Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Block</em>'.
+	 * @generated
+	 */
+	Block createBlock();
+
+	/**
+	 * Returns a new object of class '<em>Animation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Animation</em>'.
+	 * @generated
+	 */
+	Animation createAnimation();
+
+	/**
+	 * Returns a new object of class '<em>Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Loop</em>'.
+	 * @generated
+	 */
+	Loop createLoop();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Expression</em>'.
+	 * @generated
+	 */
+	BooleanExpression createBooleanExpression();
+
+	/**
+	 * Returns a new object of class '<em>Audio</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Audio</em>'.
+	 * @generated
+	 */
+	Audio createAudio();
 
 	/**
 	 * Returns the package supported by this factory.

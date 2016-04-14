@@ -85,8 +85,8 @@ public class MiniDroneAdapterFactory extends AdapterFactoryImpl {
 				return createInstructionAdapter();
 			}
 			@Override
-			public Adapter caseGo(Go object) {
-				return createGoAdapter();
+			public Adapter caseStraight(Straight object) {
+				return createStraightAdapter();
 			}
 			@Override
 			public Adapter caseTurn(Turn object) {
@@ -95,6 +95,54 @@ public class MiniDroneAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseJump(Jump object) {
 				return createJumpAdapter();
+			}
+			@Override
+			public Adapter caseTakePicture(TakePicture object) {
+				return createTakePictureAdapter();
+			}
+			@Override
+			public Adapter caseRecordVideo(RecordVideo object) {
+				return createRecordVideoAdapter();
+			}
+			@Override
+			public Adapter caseSpeed(Speed object) {
+				return createSpeedAdapter();
+			}
+			@Override
+			public Adapter casePosture(Posture object) {
+				return createPostureAdapter();
+			}
+			@Override
+			public Adapter caseVolume(Volume object) {
+				return createVolumeAdapter();
+			}
+			@Override
+			public Adapter caseTimer(Timer object) {
+				return createTimerAdapter();
+			}
+			@Override
+			public Adapter caseBlock(Block object) {
+				return createBlockAdapter();
+			}
+			@Override
+			public Adapter caseAbstractInstruction(AbstractInstruction object) {
+				return createAbstractInstructionAdapter();
+			}
+			@Override
+			public Adapter caseAnimation(Animation object) {
+				return createAnimationAdapter();
+			}
+			@Override
+			public Adapter caseLoop(Loop object) {
+				return createLoopAdapter();
+			}
+			@Override
+			public Adapter caseBooleanExpression(BooleanExpression object) {
+				return createBooleanExpressionAdapter();
+			}
+			@Override
+			public Adapter caseAudio(Audio object) {
+				return createAudioAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -145,16 +193,16 @@ public class MiniDroneAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Go <em>Go</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Straight <em>Straight</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.obeo.dsl.minidrone.Go
+	 * @see fr.obeo.dsl.minidrone.Straight
 	 * @generated
 	 */
-	public Adapter createGoAdapter() {
+	public Adapter createStraightAdapter() {
 		return null;
 	}
 
@@ -183,6 +231,174 @@ public class MiniDroneAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createJumpAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.TakePicture <em>Take Picture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.TakePicture
+	 * @generated
+	 */
+	public Adapter createTakePictureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.RecordVideo <em>Record Video</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.RecordVideo
+	 * @generated
+	 */
+	public Adapter createRecordVideoAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Speed <em>Speed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Speed
+	 * @generated
+	 */
+	public Adapter createSpeedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Posture <em>Posture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Posture
+	 * @generated
+	 */
+	public Adapter createPostureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Volume <em>Volume</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Volume
+	 * @generated
+	 */
+	public Adapter createVolumeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Timer <em>Timer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Timer
+	 * @generated
+	 */
+	public Adapter createTimerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Block <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Block
+	 * @generated
+	 */
+	public Adapter createBlockAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.AbstractInstruction <em>Abstract Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.AbstractInstruction
+	 * @generated
+	 */
+	public Adapter createAbstractInstructionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Animation <em>Animation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Animation
+	 * @generated
+	 */
+	public Adapter createAnimationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Loop <em>Loop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Loop
+	 * @generated
+	 */
+	public Adapter createLoopAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.BooleanExpression <em>Boolean Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.BooleanExpression
+	 * @generated
+	 */
+	public Adapter createBooleanExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.obeo.dsl.minidrone.Audio <em>Audio</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.obeo.dsl.minidrone.Audio
+	 * @generated
+	 */
+	public Adapter createAudioAdapter() {
 		return null;
 	}
 
