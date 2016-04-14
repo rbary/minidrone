@@ -27,11 +27,14 @@
 #include <ARDroneSDK_Unix/include/libARController/ARController.h>
 #include <ARDroneSDK_Unix/include/libARDiscovery/ARDiscovery.h>
 
+
 /*****************************************
  *
  *             define :
  *
  *****************************************/
+#define VELOCITY_PERCENT 50 // from 0 to 100
+#define ANGLE_MAX 360
 #define TAG_JS_CMD "JSPilotingMinCommands"
 #define TAG_MAIN "Main"
 #define JS_IP_ADDRESS "192.168.2.1"
@@ -75,6 +78,12 @@ int sendJumpCommand(ARCONTROLLER_Device_t *deviceController,int jumpType);
 int sendGoCommand(ARCONTROLLER_Device_t *deviceController,int distance);
 
 // called to send a right roll command to the JS
-int sendRightRollCommand(ARCONTROLLER_Device_t *deviceController,int angle);
+int sendTurnCommand(ARCONTROLLER_Device_t *deviceController,int angle);
+
+// called to compute the microsecond sleep when we send command to make straight the minidrone
+useconds_t computeStraightUsleep(int distance,int velocityPercent);
+
+// called to compute angle percent
+int computeAnglePercent(int angle);
 
 #endif /* JSPILOTINGMINIMALCOMMANDS_H_ */
