@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Module Runtime Plug-in
+Bundle-SymbolicName: fr.obeo.dsl.minidrone.gen
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.obeo.dsl.minidrone.gen.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: fr.obeo.dsl.minidrone.gen,
+ fr.obeo.dsl.minidrone.gen.main;version="1.0.0"
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.11.1",
+ org.eclipse.emf.ecore;bundle-version="2.11.1",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.11.1",
+ org.eclipse.acceleo.common;bundle-version="3.6.2",
+ org.eclipse.acceleo.engine;bundle-version="3.6.2",
+ fr.obeo.dsl.minidrone;bundle-version="1.0.0"
+
