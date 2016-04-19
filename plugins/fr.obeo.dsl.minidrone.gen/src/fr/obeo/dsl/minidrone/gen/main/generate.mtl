@@ -133,7 +133,7 @@ int main(int argc, char **argv) {
      *
      *****************************************/
 
-    ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- [minidroneProgram.name/] --");
+    ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- [minidroneProgram.minidroneName/] --");
 
     // Create new discovery device
     if(!error){
@@ -184,11 +184,11 @@ int main(int argc, char **argv) {
      *
      *****************************************/
 [for (it : Instruction | minidroneProgram.instructions) separator('\n')]
-	[if (it.oclIsTypeOf(Go))]	
+	[if (it.oclIsTypeOf(Straight))]	
 		// Send go command
 		if(!error)
 		{
-			error = sendGoCommand(deviceController, [it.oclAsType(Go).distance/]);
+			error = sendGoCommand(deviceController, [it.oclAsType(Straight).distance/]);
 		}
 	[/if]
 	[if (it.oclIsTypeOf(Turn))]
@@ -202,7 +202,7 @@ int main(int argc, char **argv) {
 		//Send jump command
 		if(!error)
 		{
-			error = sendJumpCommand(deviceController, [it.oclAsType(Jump).jumpType/]);
+			error = sendJumpCommand(deviceController, [it.oclAsType(Jump).mode/]);
 		}
 	[/if]
 [/for]
@@ -237,7 +237,7 @@ int main(int argc, char **argv) {
 # Obeo - initial API and implementation
 #
 
-EXEC_NAME=[minidroneProgram.name/]
+EXEC_NAME=[minidroneProgram.minidroneName/]
 
 SDK_DIR=../../ARDroneSDK_Unix
 
