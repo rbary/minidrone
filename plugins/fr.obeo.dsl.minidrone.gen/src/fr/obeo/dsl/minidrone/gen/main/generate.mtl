@@ -1,5 +1,5 @@
 [*******************************************************************************
- * Copyright (c) 2008, 2012 Obeo.
+ * Copyright (c) 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -176,6 +176,8 @@ int main(int argc, char **argv) {
     	error = startDeviceController(deviceController);
     }
 
+	sleep(1);
+
     /*****************************************
      *
      *			Piloting
@@ -187,7 +189,6 @@ int main(int argc, char **argv) {
 		if(!error)
 		{
 			error = sendGoCommand(deviceController, [it.oclAsType(Go).distance/]);
-			sleep(1);
 		}
 	[/if]
 	[if (it.oclIsTypeOf(Turn))]
@@ -195,7 +196,6 @@ int main(int argc, char **argv) {
 		if(!error)
 		{
 			error = sendTurnCommand(deviceController, [it.oclAsType(Turn).angle/]);
-			sleep(1);
 		}
 	[/if]
 	[if (it.oclIsTypeOf(Jump))]
@@ -203,7 +203,6 @@ int main(int argc, char **argv) {
 		if(!error)
 		{
 			error = sendJumpCommand(deviceController, [it.oclAsType(Jump).jumpType/]);
-			sleep(1);
 		}
 	[/if]
 [/for]
@@ -323,6 +322,9 @@ run:
 #define TAG_MAIN "Main"
 #define JS_IP_ADDRESS "192.168.2.1"
 #define JS_DISCOVERY_PORT 44444
+
+#define VELOCITY_PERCENT 50
+#define ANGLE_MAX 360
 #define JUMP_LONG 0
 #define JUMP_HIGH 1
 #define JUMP_MAX 2
@@ -358,11 +360,17 @@ eARCONTROLLER_DEVICE_STATE getDeviceState(ARCONTROLLER_Device_t *deviceControlle
 // called to send a jump command to the JS
 int sendJumpCommand(ARCONTROLLER_Device_t *deviceController,int jumpType);
 
-// called to send a forward command to the JS
+// called to send a Go command to the JS
 int sendGoCommand(ARCONTROLLER_Device_t *deviceController,int distance);
 
-// called to send a right roll command to the JS
-int sendRightRollCommand(ARCONTROLLER_Device_t *deviceController,int angle);
+// called to send turn command to the JS
+int sendTurnCommand(ARCONTROLLER_Device_t *deviceController,int angle);
+
+// called to compute the microsecond sleep when we send command to make straight the minidrone
+useconds_t computeStraightUsleep(int distance,int velocityPercent);
+
+// called to compute the roll angle percent
+int computeAnglePercent(int angle);
 
 #endif /* JSPILOTINGMINIMALCOMMANDS_H_ */
 
@@ -518,33 +526,84 @@ int sendJumpCommand(ARCONTROLLER_Device_t *deviceController,int jumpType)
 	return failed;
 }
 
-int sendGoCommand(ARCONTROLLER_Device_t *deviceController,int distance)
-{
+int sendGoCommand(ARCONTROLLER_Device_t *deviceController, int distance) {
 	int failed = 0;
-	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-	errorController = deviceController->jumpingSumo->setPilotingPCMDFlag (deviceController->jumpingSumo, 1);
-	errorController = deviceController->jumpingSumo->setPilotingPCMDSpeed (deviceController->jumpingSumo, distance);
 
-	if(errorController != ARCONTROLLER_OK){
-		ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_JS_CMD, "send go command failed ...");
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+	errorController = deviceController->jumpingSumo->setPilotingPCMDFlag(
+			deviceController->jumpingSumo, 1);
+	errorController = deviceController->jumpingSumo->setPilotingPCMDSpeed(
+			deviceController->jumpingSumo, VELOCITY_PERCENT);
+	usleep(computeStraightUsleep(abs(distance), VELOCITY_PERCENT));
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"send go command failed ...");
 		failed = 1;
 	}
 	return failed;
-
 }
 
-int sendTurnCommand(ARCONTROLLER_Device_t *deviceController,int angle)
-{
+int sendTurnCommand(ARCONTROLLER_Device_t *deviceController, int angle) {
 	int failed = 0;
 	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-	 errorController = deviceController->jumpingSumo->setPilotingPCMDFlag (deviceController->jumpingSumo, 1);
-	 errorController = deviceController->jumpingSumo->setPilotingPCMDTurn (deviceController->jumpingSumo, angle);
+	errorController = deviceController->jumpingSumo->setPilotingPCMDFlag(
+			deviceController->jumpingSumo, 1);
+	errorController = deviceController->jumpingSumo->setPilotingPCMDTurn(
+			deviceController->jumpingSumo, computeAnglePercent(angle));
+	usleep(50000);
 
-	if(errorController != ARCONTROLLER_OK){
-		ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_JS_CMD, "send turn command failed");
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "send turn command failed");
 		failed = 1;
 	}
 	return failed;
+}
+
+useconds_t computeStraightUsleep(int distance, int velocityPercent) {
+	useconds_t cmd_usleep;
+
+	switch (velocityPercent) {
+	case 10:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 20:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 30:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 40:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 50:
+		cmd_usleep = distance * 735000 + distance * 130000;
+		break;
+	case 60:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 70:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 80:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 90:
+		cmd_usleep = 1000000; // equal to 1s to adjust
+		break;
+	case 100:
+		cmd_usleep = distance * 480000; // to adjust too
+		break;
+	default:
+		break;
+	}
+	return cmd_usleep;
+}
+
+int computeAnglePercent(int angle) {
+	int angle_percent;
+	angle_percent = (100 * angle) / ANGLE_MAX;
+	return angle_percent;
 }
 [/file]
 [/template]

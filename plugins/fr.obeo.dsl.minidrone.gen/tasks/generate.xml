@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="fr.obeo.dsl.minidrone.gen">
     <property name="ECLIPSE_HOME" value="../../../../../tool/ObeoDesigner-Community"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../workspace"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../workspace/genconfig-runtime"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="fr.obeo.dsl.minidrone.gen.libraryclasspath">
@@ -31,6 +31,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.3.0.v20150519-0914.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.11.0.v20150806-0404.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.11.0.v20150806-0404.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
     </path>
 
     <path id="fr.obeo.dsl.minidrone.gen.classpath">
