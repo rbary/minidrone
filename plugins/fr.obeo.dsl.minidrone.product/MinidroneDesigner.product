@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Minidrone-Designer" uid="fr.obeo.dsl.minidrone.product" id="fr.obeo.dsl.minidrone.application.MinidroneDesigner" application="fr.obeo.dsl.minidrone.application.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/fr.obeo.dsl.minidrone.application/icons/alt_about.gif"/>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>--launcher.XXMaxPermSize
+256m
+      </programArgs>
+      <vmArgs>-Xms256m
+-Xmx1024m
+-XX:MaxPermSize=256m
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/fr.obeo.dsl.minidrone.application/icons/logo_16.gif" i32="/fr.obeo.dsl.minidrone.application/icons/logo_32.gif" i64="/fr.obeo.dsl.minidrone.application/icons/logo_64.gif"/>
+
+   <splash
+      location="fr.obeo.dsl.minidrone.application" />
+   <launcher name="MinidroneDesigner">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</linux>
+   </vm>
+
+   <plugins>
+      <plugin id="fr.obeo.dsl.minidrone"/>
+      <plugin id="fr.obeo.dsl.minidrone.application"/>
+      <plugin id="fr.obeo.dsl.minidrone.design"/>
+      <plugin id="fr.obeo.dsl.minidrone.edit"/>
+      <plugin id="fr.obeo.dsl.minidrone.editor"/>
+      <plugin id="fr.obeo.dsl.minidrone.gen"/>
+      <plugin id="fr.obeo.dsl.minidrone.ui"/>
+   </plugins>
+
+   <features>
+      <feature id="fr.obeo.dsl.minidrone.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.sirius.runtime"/>
+      <feature id="org.eclipse.sirius.runtime.aql"/>
+      <feature id="org.eclipse.sirius.runtime.ide.ui"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <property name="osgi.instance.area.default" value="@user.home/minidronedesignerws" os="macosx" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+      <file path="/fr.obeo.dsl.minidrone.application/default.css"/>
+   </cssInfo>
+
+</product>
