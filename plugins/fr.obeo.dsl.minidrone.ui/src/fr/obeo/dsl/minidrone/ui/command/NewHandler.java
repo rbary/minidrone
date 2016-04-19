@@ -99,7 +99,7 @@ public class NewHandler extends AbstractHandler {
 										.createMiniDroneProgram();
 								
 								// set a name for the root model object (todo)
-								rootModelObject.setName("JSPilotingMinimal");
+								rootModelObject.setMinidroneName("ObeoJS");
 								
 
 								if (rootModelObject != null) {

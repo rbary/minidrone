@@ -24,14 +24,14 @@
                label="Minidrone">
             <command
                   commandId="fr.obeo.dsl.minidrone.ui.command.new"
-                  icon="icons/alt_window16.gif"
+                  icon="icons/new.gif"
                   label="New"
                   style="push"
                   tooltip="New">
             </command>
             <command
                   commandId="fr.obeo.dsl.minidrone.ui.command.sync"
-                  icon="icons/alt_window16.gif"
+                  icon="icons/upload.gif"
                   label="Sync"
                   style="push">
             </command>

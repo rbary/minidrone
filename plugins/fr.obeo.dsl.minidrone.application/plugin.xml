@@ -25,6 +25,14 @@
                name="appName"
                value="Minidrone Designer">
          </property>
+         <property
+               name="aboutImage"
+               value="icons/alt_about.gif">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/logo_16.gif,icons/logo_32.gif,icons/logo_64.gif">
+         </property>
       </product>
    </extension>
 
