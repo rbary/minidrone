@@ -18,12 +18,11 @@ import fr.obeo.dsl.minidrone.Timer;
 import fr.obeo.dsl.minidrone.Animation;
 import fr.obeo.dsl.minidrone.AnimationMode;
 import fr.obeo.dsl.minidrone.Audio;
-import fr.obeo.dsl.minidrone.AudioMode;
-import fr.obeo.dsl.minidrone.Color;
 import fr.obeo.dsl.minidrone.Jump;
 import fr.obeo.dsl.minidrone.Turn;
 import fr.obeo.dsl.minidrone.JumpMode;
 import fr.obeo.dsl.minidrone.Led;
+import fr.obeo.dsl.minidrone.MiniDroneProgram;
 import fr.obeo.dsl.minidrone.Piloting;
 import fr.obeo.dsl.minidrone.PilotingMode;
 import fr.obeo.dsl.minidrone.RecordVideo;
@@ -37,20 +36,18 @@ public class LabelServices {
     // label computing for Straight instruction
     public String computeLabel(Straight instruction) {
         int distance = instruction.getDistance();
-        return "Straight\nDistance : "+distance; //$NON-NLS-1$
+        return "Straight\n distance " + distance; //$NON-NLS-1$
     }
 
     // label computing for Turn instruction
     public String computeLabel(Turn instruction) {
-        int angle = instruction.getAngle();
-        int radius = instruction.getRadius();
-        return "Turn\n Angle : "+angle+"\n radius : "+radius; //$NON-NLS-1$ //$NON-NLS-2$
+        return "Turn"; //$NON-NLS-1$
     }
 
     // label computing for Jump instruction
     public String computeLabel(Jump instruction) {
         JumpMode mode = instruction.getMode();
-        return "Jump\nMode : " + mode; //$NON-NLS-1$
+        return "Jump\n mode " + mode; //$NON-NLS-1$
     }
 
     // label computing for Take Picture instruction
@@ -61,40 +58,44 @@ public class LabelServices {
     // label computing for Record Video instruction
     public String computeLabel(RecordVideo instruction) {
         Boolean enable = instruction.isEnable();
-        return "Record Video :\n"+enable; //$NON-NLS-1$
+        return "Record Video\n"+enable; //$NON-NLS-1$
     }
 
     // label computing for Piloting instruction
     public String computeLabel(Piloting instruction) {
         PilotingMode mode = instruction.getMode();
-        return "Piloting :\n Mode "+mode; //$NON-NLS-1$
+        return "Piloting\n mode "+ mode; //$NON-NLS-1$
     }
 
     // label computing for Audio instruction
     public String computeLabel(Audio instruction) {
-        AudioMode mode = instruction.getMode();
-        int volume = instruction.getVolume();
-        return "Audio :\n Mode "+mode +"\n volume "+volume; //$NON-NLS-1$ //$NON-NLS-2$
+        return "Audio"; //$NON-NLS-1$
     }
 
     // label computing for Led instruction
     public String computeLabel(Led instruction) {
-        Color left = instruction.getLeft();
-        Color right = instruction.getRight();
-        int brightness = instruction.getBrightness();
-        return "Led :\n left "+left + "\n right "+right + "\n brightness "+brightness; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        return "Led"; //$NON-NLS-1$
 
     }
-    
+
     // label computing for Timer instruction
-    public String computeLabel(Timer instruction){
+    public String computeLabel(Timer instruction) {
         int duration = instruction.getDuration();
-        return "Timer :\n duration "+duration; //$NON-NLS-1$
+        return "Timer\n duration "+duration; //$NON-NLS-1$
     }
-    
-    // label computing for Acrobatic instruction
-    public String compiteLabel(Animation instruction){
+
+    // label computing for Animation instruction
+    public String computeLabel(Animation instruction) {
         AnimationMode mode = instruction.getMode();
-        return "Animation :\n mode "+mode; //$NON-NLS-1$
+        return "Animation\n mode "+mode; //$NON-NLS-1$
+    }
+
+    public String computeLabel(MiniDroneProgram p){
+        String label = "minidrone "+p.getMinidroneName()+"\n"+ //$NON-NLS-1$ //$NON-NLS-2$
+                       "speed "+p.getSpeedPercentage()+"%\n"+  //$NON-NLS-1$//$NON-NLS-2$
+                       "volume "+p.getSoundVolume()+"%\n"+ //$NON-NLS-1$ //$NON-NLS-2$
+                       "audio "+p.getAudioMode()+"\n"+  //$NON-NLS-1$//$NON-NLS-2$
+                       "piloting "+p.getPiloting(); //$NON-NLS-1$       
+        return label;        
     }
 }
