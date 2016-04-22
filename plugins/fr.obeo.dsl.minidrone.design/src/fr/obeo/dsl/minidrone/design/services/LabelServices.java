@@ -26,6 +26,7 @@ import fr.obeo.dsl.minidrone.MiniDroneProgram;
 import fr.obeo.dsl.minidrone.Piloting;
 import fr.obeo.dsl.minidrone.PilotingMode;
 import fr.obeo.dsl.minidrone.RecordVideo;
+import fr.obeo.dsl.minidrone.Speed;
 
 /**
  * A service call to manage diagram elements labels
@@ -36,7 +37,7 @@ public class LabelServices {
     // label computing for Straight instruction
     public String computeLabel(Straight instruction) {
         int distance = instruction.getDistance();
-        return "Straight\n distance " + distance; //$NON-NLS-1$
+        return "Straight\n distance " + distance+" m"; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     // label computing for Turn instruction
@@ -81,7 +82,7 @@ public class LabelServices {
     // label computing for Timer instruction
     public String computeLabel(Timer instruction) {
         int duration = instruction.getDuration();
-        return "Timer\n duration "+duration; //$NON-NLS-1$
+        return "Timer\n duration "+duration+" s"; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     // label computing for Animation instruction
@@ -89,11 +90,17 @@ public class LabelServices {
         AnimationMode mode = instruction.getMode();
         return "Animation\n mode "+mode; //$NON-NLS-1$
     }
+    
+    // label computing for Speed instruction
+    public String computeLabel(Speed instruction) {
+        int percentage = instruction.getPercentage();
+        return "Speed\n"+percentage+" %"; //$NON-NLS-1$ //$NON-NLS-2$
+    }
 
     public String computeLabel(MiniDroneProgram p){
         String label = "minidrone "+p.getMinidroneName()+"\n"+ //$NON-NLS-1$ //$NON-NLS-2$
-                       "speed "+p.getSpeedPercentage()+"%\n"+  //$NON-NLS-1$//$NON-NLS-2$
-                       "volume "+p.getSoundVolume()+"%\n"+ //$NON-NLS-1$ //$NON-NLS-2$
+                       "speed "+p.getSpeedPercentage()+" %\n"+  //$NON-NLS-1$//$NON-NLS-2$
+                       "volume "+p.getSoundVolume()+" %\n"+ //$NON-NLS-1$ //$NON-NLS-2$
                        "audio "+p.getAudioMode()+"\n"+  //$NON-NLS-1$//$NON-NLS-2$
                        "piloting "+p.getPiloting(); //$NON-NLS-1$       
         return label;        

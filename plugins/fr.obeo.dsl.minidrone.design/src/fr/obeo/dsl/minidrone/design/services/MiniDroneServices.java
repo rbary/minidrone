@@ -13,7 +13,6 @@
 package fr.obeo.dsl.minidrone.design.services;
 
 import fr.obeo.dsl.minidrone.AbstractInstruction;
-import fr.obeo.dsl.minidrone.Instruction;
 import fr.obeo.dsl.minidrone.MiniDroneProgram;
 
 import java.util.List;
@@ -23,7 +22,7 @@ import java.util.List;
  * instructions sequence from the current one
  */
 public class MiniDroneServices {	
-	public AbstractInstruction getNextInstruction(Instruction instruction){
+	public AbstractInstruction getNextInstruction(AbstractInstruction instruction){
 		MiniDroneProgram program = (MiniDroneProgram) instruction.eContainer();
 		List<AbstractInstruction> instructions = program.getInstructions();
 		int currentInstructionIndex = instructions.indexOf(instruction);
