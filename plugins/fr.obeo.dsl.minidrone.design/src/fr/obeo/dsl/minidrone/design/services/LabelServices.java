@@ -37,7 +37,7 @@ public class LabelServices {
     // label computing for Straight instruction
     public String computeLabel(Straight instruction) {
         int distance = instruction.getDistance();
-        return "Straight\n distance " + distance+" m"; //$NON-NLS-1$ //$NON-NLS-2$
+        return "Straight distance "+ distance+" m"; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     // label computing for Turn instruction
@@ -48,7 +48,7 @@ public class LabelServices {
     // label computing for Jump instruction
     public String computeLabel(Jump instruction) {
         JumpMode mode = instruction.getMode();
-        return "Jump\n mode " + mode; //$NON-NLS-1$
+        return "Jump mode "+ mode; //$NON-NLS-1$
     }
 
     // label computing for Take Picture instruction
@@ -59,13 +59,13 @@ public class LabelServices {
     // label computing for Record Video instruction
     public String computeLabel(RecordVideo instruction) {
         Boolean enable = instruction.isEnable();
-        return "Record Video\n"+enable; //$NON-NLS-1$
+        return "Record Video "+enable; //$NON-NLS-1$
     }
 
     // label computing for Piloting instruction
     public String computeLabel(Piloting instruction) {
         PilotingMode mode = instruction.getMode();
-        return "Piloting\n mode "+ mode; //$NON-NLS-1$
+        return "Piloting mode "+ mode; //$NON-NLS-1$
     }
 
     // label computing for Audio instruction
@@ -82,19 +82,19 @@ public class LabelServices {
     // label computing for Timer instruction
     public String computeLabel(Timer instruction) {
         int duration = instruction.getDuration();
-        return "Timer\n duration "+duration+" s"; //$NON-NLS-1$ //$NON-NLS-2$
+        return "Timer duration "+duration+" s"; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     // label computing for Animation instruction
     public String computeLabel(Animation instruction) {
         AnimationMode mode = instruction.getMode();
-        return "Animation\n mode "+mode; //$NON-NLS-1$
+        return "Animation mode "+mode; //$NON-NLS-1$
     }
     
     // label computing for Speed instruction
     public String computeLabel(Speed instruction) {
         int percentage = instruction.getPercentage();
-        return "Speed\n"+percentage+" %"; //$NON-NLS-1$ //$NON-NLS-2$
+        return "Speed "+percentage+" %"; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     public String computeLabel(MiniDroneProgram p){
