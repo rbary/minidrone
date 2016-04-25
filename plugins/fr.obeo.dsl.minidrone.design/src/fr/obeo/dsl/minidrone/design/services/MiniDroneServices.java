@@ -13,7 +13,6 @@
 package fr.obeo.dsl.minidrone.design.services;
 
 import fr.obeo.dsl.minidrone.AbstractInstruction;
-import fr.obeo.dsl.minidrone.MiniDroneProgram;
 
 import java.util.List;
 
@@ -21,16 +20,32 @@ import java.util.List;
  * A service called to compute the next one instruction in the minidrone program
  * instructions sequence from the current one
  */
-public class MiniDroneServices {	
-	public AbstractInstruction getNextInstruction(AbstractInstruction instruction){
-		MiniDroneProgram program = (MiniDroneProgram) instruction.eContainer();
-		List<AbstractInstruction> instructions = program.getInstructions();
-		int currentInstructionIndex = instructions.indexOf(instruction);
-		if(currentInstructionIndex < instructions.size()){
-			return instructions.get(currentInstructionIndex+1);
-		}
-		return null;
-	}
-}
+public class MiniDroneServices {
 
-    
+    /**
+     * A singleton instance to be accessed by other java services.
+     */
+    public static final MiniDroneServices INSTANCE = new MiniDroneServices();
+
+    /**
+     * hidden constructor.
+     */
+    public MiniDroneServices() {
+
+    }
+
+    /**
+     * 
+     * @param abstractInstruction
+     * @return AbstractInstruction
+     */
+    public AbstractInstruction getNextInstruction(AbstractInstruction abstractInstruction) {
+        final NextInstructionSwitch nextInstructionSwitch = new NextInstructionSwitch();
+        List<AbstractInstruction> instructions = nextInstructionSwitch.doSwitch(abstractInstruction.eContainer());
+        int currentIndex = instructions.indexOf(abstractInstruction);
+        if (currentIndex < instructions.size()) {
+            return instructions.get(currentIndex + 1);
+        }
+        return null;
+    }
+}
