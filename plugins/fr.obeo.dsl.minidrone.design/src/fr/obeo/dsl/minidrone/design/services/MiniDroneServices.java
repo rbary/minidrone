@@ -16,6 +16,8 @@ import fr.obeo.dsl.minidrone.AbstractInstruction;
 
 import java.util.List;
 
+
+
 /**
  * A service called to compute the next one instruction in the minidrone program
  * instructions sequence from the current one
@@ -23,19 +25,6 @@ import java.util.List;
 public class MiniDroneServices {
 
     /**
-     * A singleton instance to be accessed by other java services.
-     */
-    public static final MiniDroneServices INSTANCE = new MiniDroneServices();
-
-    /**
-     * hidden constructor.
-     */
-    public MiniDroneServices() {
-
-    }
-
-    /**
-     * 
      * @param abstractInstruction
      * @return AbstractInstruction
      */
