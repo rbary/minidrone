@@ -13,6 +13,7 @@
 package fr.obeo.dsl.minidrone.design.services;
 
 import fr.obeo.dsl.minidrone.AbstractInstruction;
+import fr.obeo.dsl.minidrone.MiniDroneProgram;
 
 import java.util.List;
 
@@ -36,5 +37,15 @@ public class MiniDroneServices {
             return instructions.get(currentIndex + 1);
         }
         return null;
+    }
+    
+    public boolean isLastInstruction(AbstractInstruction abstractIntruction) {
+        MiniDroneProgram minidroneProgram = (MiniDroneProgram) abstractIntruction.eContainer();
+        List<AbstractInstruction> instructions = minidroneProgram.getInstructions();
+        int lastIndex = instructions.size()-1;
+        if(abstractIntruction.equals(instructions.get(lastIndex))){
+            return true;
+        }
+        return false; 
     }
 }
