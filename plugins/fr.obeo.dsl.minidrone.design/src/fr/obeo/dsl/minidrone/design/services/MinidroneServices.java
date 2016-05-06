@@ -17,15 +17,19 @@ import fr.obeo.dsl.minidrone.MiniDroneProgram;
 
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 
 /**
- * A service called to compute the next one instruction in the minidrone program
- * instructions sequence from the current one
+ * 
+ * @author rbary
+ *
  */
-public class MiniDroneServices {
+public class MinidroneServices {
 
     /**
+     * Called to get the next instruction from the current instruction in Minidrone Program instructions collection
      * @param abstractInstruction
      * @return AbstractInstruction
      */
@@ -39,7 +43,12 @@ public class MiniDroneServices {
         return null;
     }
     
-    public boolean isLastInstruction(AbstractInstruction abstractIntruction) {
+    /**
+     * Retrieve the last abstract instruction of Minidrone Program instructions collection
+     * @param abstractIntruction
+     * @return boolean
+     */
+    public boolean isTheLastInstruction(AbstractInstruction abstractIntruction) {
         MiniDroneProgram minidroneProgram = (MiniDroneProgram) abstractIntruction.eContainer();
         List<AbstractInstruction> instructions = minidroneProgram.getInstructions();
         int lastIndex = instructions.size()-1;
@@ -48,4 +57,14 @@ public class MiniDroneServices {
         }
         return false; 
     }
+    
+    /**
+     * Called to compute a specific label
+     * @param object
+     * @return String
+     */
+    public String computeLabel(EObject object){
+        LabelSwitch labelSwitch = new LabelSwitch();
+        return labelSwitch.doSwitch(object);
+    } 
 }

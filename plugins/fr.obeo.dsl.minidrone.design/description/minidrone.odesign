@@ -480,7 +480,6 @@
         <toolSections name="Advanced" reusedTools="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='animationMode'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='audioMode'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='enable'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='jumpMode'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='postureMode']"/>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="fr.obeo.dsl.minidrone.design.services.LabelServices"/>
-    <ownedJavaExtensions qualifiedClassName="fr.obeo.dsl.minidrone.design.services.MiniDroneServices"/>
+    <ownedJavaExtensions qualifiedClassName="fr.obeo.dsl.minidrone.design.services.MinidroneServices"/>
   </ownedViewpoints>
 </description:Group>
