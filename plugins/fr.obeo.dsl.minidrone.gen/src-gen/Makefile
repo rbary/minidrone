@@ -6,12 +6,12 @@
 # http://www.eclipse.org/legal/epl-v10.html
 #
 # Contributors:
-# Obeo - initial API and implementation
+# 	Obeo - initial API and implementation
 #
 
-EXEC_NAME=JSPilotingMinimal
+EXEC_NAME=JumpingSumoPiloting
 
-SDK_DIR=../../ARDroneSDK_Unix
+SDK_DIR=ARDroneSDK_Unix
 
 IDIR=./
 CFLAGS=-I$(IDIR) -I$(SDK_DIR)/include
@@ -24,10 +24,10 @@ EXTERNAL_LIB=-lncurses
 LIBS=-L$(LDIR) -larsal -larcontroller-3.1.0 -lardiscovery-3.1.0 $(EXTERNAL_LIB) -Wl,-rpath=$(LDIR)
 LIBS_DBG=-L$(LDIR) -larsal_dbg -larcontroller_dbg -lardiscovery_dbg $(EXTERNAL_LIB) -Wl,-rpath=$(LDIR)
 
-_DEPS = JSPilotingMinimalCommands.h
+_DEPS = JumpingSumoPiloting.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = JSPilotingMinimalCommands.o main.o
+_OBJ = JumpingSumoPiloting.o main.o
 OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
 
 $(OBJDIR)/%.o: %.c $(DEPS)

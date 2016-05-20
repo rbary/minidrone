@@ -40,8 +40,7 @@
  *
  *****************************************/
 
-#include "JSPilotingMinimalCommands.h"
-
+#include "JumpingSumoPiloting.h"
 
 /*****************************************
  *
@@ -49,64 +48,57 @@
  *
  *****************************************/
 
-void stateChanged (eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData)
-{
-	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "    - stateChanged newState: %d .....", newState);
+void stateChanged(eARCONTROLLER_DEVICE_STATE newState,
+		eARCONTROLLER_ERROR error, void *customData) {
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN,
+			"    - stateChanged newState: %d .....", newState);
 
-	switch (newState)
-	{
-		case ARCONTROLLER_DEVICE_STATE_STOPPED:
-			ARSAL_Sem_Post (&(stateSem));
-			//run = 0;
-			break;
+	switch (newState) {
+	case ARCONTROLLER_DEVICE_STATE_STOPPED:
+		ARSAL_Sem_Post(&(stateSem));
+		break;
 
-		case ARCONTROLLER_DEVICE_STATE_RUNNING:
-			ARSAL_Sem_Post (&(stateSem));
-			break;
-
-		default:
-			break;
+	case ARCONTROLLER_DEVICE_STATE_RUNNING:
+		ARSAL_Sem_Post(&(stateSem));
+		break;
+	default:
+		break;
 	}
 }
 
-void commandReceived (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData)
-{
+void commandReceived(eARCONTROLLER_DICTIONARY_KEY commandKey,
+		ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData) {
 	ARCONTROLLER_Device_t *deviceController = customData;
 
-	if (deviceController != NULL)
-	{
+	if (deviceController != NULL) {
 		// if the command received is a battery state changed
-		if (commandKey == ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED)
-		{
+		if (commandKey
+				== ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED) {
 			ARCONTROLLER_DICTIONARY_ARG_t *arg = NULL;
 			ARCONTROLLER_DICTIONARY_ELEMENT_t *singleElement = NULL;
 
-			if (elementDictionary != NULL)
-			{
+			if (elementDictionary != NULL) {
 				// get the command received in the device controller
-				HASH_FIND_STR (elementDictionary, ARCONTROLLER_DICTIONARY_SINGLE_KEY, singleElement);
+				HASH_FIND_STR(elementDictionary,
+						ARCONTROLLER_DICTIONARY_SINGLE_KEY, singleElement);
 
-				if (singleElement != NULL)
-				{
+				if (singleElement != NULL) {
 					// get the value
-					HASH_FIND_STR (singleElement->arguments, ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED_PERCENT, arg);
+					HASH_FIND_STR(singleElement->arguments,
+							ARCONTROLLER_DICTIONARY_KEY_COMMON_COMMONSTATE_BATTERYSTATECHANGED_PERCENT,
+							arg);
 
-					if (arg != NULL)
-					{
-						ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "command received :%d",arg->value.U8);
-					}
-					else
-					{
+					if (arg != NULL) {
+						ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN,
+								"command received :%d", arg->value.U8);
+					} else {
 						ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_MAIN, "arg is NULL");
 					}
+				} else {
+					ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_MAIN,
+							"singleElement is NULL");
 				}
-				else
-				{
-					ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_MAIN, "singleElement is NULL");
-				}
-			}
-			else
-			{
+			} else {
 				ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_MAIN, "elements is NULL");
 			}
 		}
@@ -121,100 +113,114 @@ void commandReceived (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICT
 int main(int argc, char **argv) {
 	//local declarations
 	int error = 0;
-    ARSAL_Sem_Init (&(stateSem), 0, 0);
-    eARCONTROLLER_DEVICE_STATE deviceState = ARCONTROLLER_DEVICE_STATE_MAX;
-    ARDISCOVERY_Device_t *discoveryDevice = NULL;
-    ARCONTROLLER_Device_t *deviceController = NULL;
+	speedPercentage = DEFAULT_SPEED_PERCENT;
+	ARSAL_Sem_Init(&(stateSem), 0, 0);
+	eARCONTROLLER_DEVICE_STATE deviceState;
+	ARDISCOVERY_Device_t *discoveryDevice = NULL;
+	ARCONTROLLER_Device_t *deviceController = NULL;
 
+	/*****************************************
+	 *
+	 *   		Initialization
+	 *
+	 *****************************************/
 
-    /*****************************************
-     *
-     *   		Initialization
-     *
-     *****************************************/
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- JSPilotingMinimal --");
 
-    ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- [minidroneProgram.minidroneName/] --");
-
-    // Create new discovery device
-    if(!error){
-    	discoveryDevice = createInitDiscoveryDevice();
-    	if(discoveryDevice == NULL){error = 1;}
-    }
-
-    // Create new device controller
-    if(!error){
-    	deviceController = createDeviceController(discoveryDevice);
-    	if(discoveryDevice == NULL){error = 1;}
-    }
-
-
-
-    if(!error){
-    	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-    	errorController = ARCONTROLLER_Device_AddStateChangedCallback (deviceController, stateChanged, deviceController);
-
-		if (errorController != ARCONTROLLER_OK)
-		{
-			ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_MAIN, "add State callback failed.");
+	// Create new discovery device
+	if (!error) {
+		discoveryDevice = createInitDiscoveryDevice();
+		if (discoveryDevice == NULL) {
 			error = 1;
 		}
-    }
+	}
 
-    if(!error)
-    {
-       	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-       	errorController = ARCONTROLLER_Device_AddCommandReceivedCallback(deviceController, commandReceived, deviceController);
+	// Create new device controller
+	if (!error) {
+		deviceController = createDeviceController(discoveryDevice);
+		if (discoveryDevice == NULL) {
+			error = 1;
+		}
+	}
 
-   		if (errorController != ARCONTROLLER_OK)
-   		{
-   			ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_MAIN, "add State callback failed.");
-   			error = 1;
-   		}
-    }
+	if (!error) {
+		eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+		errorController = ARCONTROLLER_Device_AddStateChangedCallback(
+				deviceController, stateChanged, deviceController);
 
-    if(!error){
-    	error = startDeviceController(deviceController);
-    }
+		if (errorController != ARCONTROLLER_OK) {
+			ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_MAIN,
+					"add State callback failed.");
+			error = 1;
+		}
+	}
 
-	sleep(1);
+	if (!error) {
+		eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+		errorController = ARCONTROLLER_Device_AddCommandReceivedCallback(
+				deviceController, commandReceived, deviceController);
 
+		if (errorController != ARCONTROLLER_OK) {
+			ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_MAIN,
+					"add State callback failed.");
+			error = 1;
+		}
+	}
+
+	if (!error) {
+		error = startDeviceController(deviceController);
+	}
     /*****************************************
      *
      *			Piloting
      *
      *****************************************/
-[for (it : Instruction | minidroneProgram.instructions) separator('\n')]
+[for (it : AbstractInstruction | minidroneProgram.instructions) separator('\n')]
 	[if (it.oclIsTypeOf(Straight))]	
-		// Send go command
-		if(!error)
-		{
-			error = sendGoCommand(deviceController, [it.oclAsType(Straight).distance/]);
-		}
+		// straight command
+		straight(deviceController, [it.oclAsType(Straight).distance/]);
 	[/if]
 	[if (it.oclIsTypeOf(Turn))]
-		// Send turn command
-		if(!error)
-		{
-			error = sendTurnCommand(deviceController, [it.oclAsType(Turn).angle/]);
-		}
+		// turn command
+		turn(deviceController, [it.oclAsType(Turn).angle/]);
 	[/if]
 	[if (it.oclIsTypeOf(Jump))]
-		//Send jump command
-		if(!error)
-		{
-			error = sendJumpCommand(deviceController, [it.oclAsType(Jump).mode/]);
-		}
+		// jump command
+		jump(deviceController, [it.oclAsType(Jump).mode/]);
+	[/if]
+	[if (it.oclIsTypeOf(Timer))]
+		// timer command
+		timer([it.oclAsType(Timer).duration/]);
+	[/if]
+	[if (it.oclIsTypeOf(Speed))]
+		// speed command
+		speed([it.oclAsType(Speed).percentage/]);
+	[/if]
+	[if (it.oclIsTypeOf(Posture))]
+		// Send posture setting command
+		posture(deviceController, [it.oclAsType(Posture).mode/]);
+	[/if]
+	[if (it.oclIsTypeOf(Animation))]
+		// animation command
+		animation(deviceController, [it.oclAsType(Animation).mode/]);
+	[/if]
+	[if (it.oclIsTypeOf(Audio))]
+		//audio command
+		audio(deviceController, [it.oclAsType(Audio).mode/]);
+	[/if]
+	[if (it.oclIsTypeOf(Volume))]
+		// volume command
+		volume(deviceController, [it.oclAsType(Volume).percentage/]);
 	[/if]
 [/for]
-
     /*****************************************
      *
      *			End
      *
      *****************************************/
-    stopDeviceController(deviceController);
-    ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- END --");
-    return EXIT_SUCCESS;
+	stopDeviceController(deviceController);
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- END --");
+	return EXIT_SUCCESS;
 }
 [/file]
 [/template]
@@ -234,12 +240,12 @@ int main(int argc, char **argv) {
 # http://www.eclipse.org/legal/epl-v10.html
 #
 # Contributors:
-# Obeo - initial API and implementation
+# 	Obeo - initial API and implementation
 #
 
-EXEC_NAME=[minidroneProgram.minidroneName/]
+EXEC_NAME=JumpingSumoPiloting
 
-SDK_DIR=../../ARDroneSDK_Unix
+SDK_DIR=ARDroneSDK_Unix
 
 IDIR=./
 CFLAGS=-I$(IDIR) -I$(SDK_DIR)/include
@@ -252,10 +258,10 @@ EXTERNAL_LIB=-lncurses
 LIBS=-L$(LDIR) -larsal -larcontroller-3.1.0 -lardiscovery-3.1.0 $(EXTERNAL_LIB) -Wl,-rpath=$(LDIR)
 LIBS_DBG=-L$(LDIR) -larsal_dbg -larcontroller_dbg -lardiscovery_dbg $(EXTERNAL_LIB) -Wl,-rpath=$(LDIR)
 
-_DEPS = JSPilotingMinimalCommands.h
+_DEPS = JumpingSumoPiloting.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = JSPilotingMinimalCommands.o main.o
+_OBJ = JumpingSumoPiloting.o main.o
 OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
 
 $(OBJDIR)/%.o: %.c $(DEPS)
@@ -283,7 +289,7 @@ run:
  */]
 [template public genHeader(minidroneProgram : MiniDroneProgram)]
 [comment @main /]
-[file ('JSPilotingMinimalCommands.h', false, 'UTF-8')]
+[file ('JumpingSumoPiloting.h', false, 'UTF-8')]
 /**
  * Copyright (c) 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
@@ -296,8 +302,8 @@ run:
  *
  */
 
-#ifndef JSPILOTINGMINIMALCOMMANDS_H_
-#define JSPILOTINGMINIMALCOMMANDS_H_
+#ifndef JUMPINGSUMOPILOTING_H_
+#define JUMPINGSUMOPILOTING_H_
 
 /*****************************************
  *
@@ -309,26 +315,64 @@ run:
 #include <string.h>
 #include <unistd.h>
 
-#include <../../ARDroneSDK_Unix/include/libARSAL/ARSAL.h>
-#include <../../ARDroneSDK_Unix/include/libARController/ARController.h>
-#include <../../ARDroneSDK_Unix/include/libARDiscovery/ARDiscovery.h>
+#include <ARDroneSDK_Unix/include/libARSAL/ARSAL.h>
+#include <ARDroneSDK_Unix/include/libARController/ARController.h>
+#include <ARDroneSDK_Unix/include/libARDiscovery/ARDiscovery.h>
+
 
 /*****************************************
  *
  *             define :
  *
  *****************************************/
+#define DEFAULT_SPEED_PERCENT 50
+#define ANGLE_MAX 360
 #define TAG_JS_CMD "JSPilotingMinCommands"
 #define TAG_MAIN "Main"
 #define JS_IP_ADDRESS "192.168.2.1"
 #define JS_DISCOVERY_PORT 44444
 
-#define VELOCITY_PERCENT 50
-#define ANGLE_MAX 360
-#define JUMP_LONG 0
-#define JUMP_HIGH 1
-#define JUMP_MAX 2
+// Minimal utimer
+#define MIN_USEC_TIMER 500000
+
+// Unit utimers
+#define U_TIMER_SPEED_20 4500000
+#define U_TIMER_SPEED_30 2000000
+#define U_TIMER_SPEED_40 1300000
+#define U_TIMER_SPEED_50 860000
+#define U_TIMER_SPEED_60 650000
+#define U_TIMER_SPEED_70 570000
+#define U_TIMER_SPEED_80 400000
+#define U_TIMER_SPEED_90 350000
+#define U_TIMER_SPEED_100 300000
+
+//Jump mode
+#define LONG 0
+#define HIGH 1
+
+//Posture mode
+#define JUMPER 0
+#define KICKER 1
+#define AUTOBALANCE 2
+
+//Audio Mode
+#define MONSTER 0
+#define INSECT 1
+#define ROBOT 2
+
+//Animations
+#define SPIN 0
+#define TOUCH 1
+#define SHAKE 2
+#define METRONOME 3
+#define WAVE 4
+#define SPINJUMP 5
+#define SLALOM 6
+#define SPINPOSTURE 7
+#define SPIRAL 8
+
 ARSAL_Sem_t stateSem;
+int speedPercentage;
 
 // called to create and init a discovery device; implies a JS discovery device creation with Wifi init
 ARDISCOVERY_Device_t * createInitDiscoveryDevice();
@@ -351,29 +395,43 @@ void stopDeviceController(ARCONTROLLER_Device_t *deviceController);
 // called to get the state of the JS
 eARCONTROLLER_DEVICE_STATE getDeviceState(ARCONTROLLER_Device_t *deviceController,ARSAL_Sem_t stateSem, eARCONTROLLER_DEVICE_STATE deviceState );
 
-// called when a command has been received from the drone
-//void commandReceived (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData);
+// Called to send a none command
+int none(ARCONTROLLER_Device_t *deviceController);
 
-// called when the state of the device controller has changed
-//void stateChanged (eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData,ARSAL_Sem_t stateSem);
+// Called to send a command making go straight the JS
+int straight(ARCONTROLLER_Device_t *deviceController,int distance);
 
-// called to send a jump command to the JS
-int sendJumpCommand(ARCONTROLLER_Device_t *deviceController,int jumpType);
+// Called to send a command making turn the JS
+int turn(ARCONTROLLER_Device_t *deviceController,int angle);
 
-// called to send a Go command to the JS
-int sendGoCommand(ARCONTROLLER_Device_t *deviceController,int distance);
+// Called to send a command making jump the JS
+int jump(ARCONTROLLER_Device_t *deviceController,int jumpMode);
 
-// called to send turn command to the JS
-int sendTurnCommand(ARCONTROLLER_Device_t *deviceController,int angle);
+// Called to run a timer in seconds
+void timer(int duration);
 
-// called to compute the microsecond sleep when we send command to make straight the minidrone
-useconds_t computeStraightUsleep(int distance,int velocityPercent);
+// Called to send a command setting speed percentage
+void speed(int newValue);
 
-// called to compute the roll angle percent
+// Called to send a command to set the piloting posture of the JS
+int posture(ARCONTROLLER_Device_t *deviceController, int postureMode);
+
+// Called to send a command to make the js animate (acrobatics)
+int animation(ARCONTROLLER_Device_t *deviceController, int animation);
+
+// Called to send a command setting audio theme and volume of the JS
+int audio(ARCONTROLLER_Device_t *deviceController, int audioMode);
+
+// Called to set the volume
+int volume(ARCONTROLLER_Device_t *deviceController, int volumePercentage);
+
+// Called to compute the microsecond sleep when we send command to make straight the JS
+useconds_t computeStraightUsleep(int distance, int velocityPercent);
+
+// Called to compute angle percent
 int computeAnglePercent(int angle);
 
-#endif /* JSPILOTINGMINIMALCOMMANDS_H_ */
-
+#endif /* JUMPINGSUMOPILOTING_H_ */
 [/file]
 [/template]
 
@@ -383,8 +441,8 @@ int computeAnglePercent(int angle);
  */]
 [template public genSource(minidroneProgram : MiniDroneProgram)]
 [comment @main /]
-[file ('JSPilotingMinimalCommands.c', false, 'UTF-8')]
-	/**
+[file ('JumpingSumoPiloting.c', false, 'UTF-8')]
+/**
  * Copyright (c) 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -401,8 +459,7 @@ int computeAnglePercent(int angle);
  *             include
  *
  *****************************************/
-#include "JSPilotingMinimalCommands.h"
-
+#include "JumpingSumoPiloting.h"
 
 /*****************************************
  *
@@ -410,148 +467,158 @@ int computeAnglePercent(int angle);
  *
  ****************************************/
 
-ARDISCOVERY_Device_t * createInitDiscoveryDevice()
-{
+ARDISCOVERY_Device_t * createInitDiscoveryDevice() {
 	eARDISCOVERY_ERROR errorDiscovery = ARDISCOVERY_OK;
 	ARDISCOVERY_Device_t *discoveryDevice = NULL;
 
 	discoveryDevice = ARDISCOVERY_Device_New(&errorDiscovery);
 
-	if(errorDiscovery == ARDISCOVERY_OK)
-	{
+	if (errorDiscovery == ARDISCOVERY_OK) {
 		//create a specific JS discovery device
-		errorDiscovery = ARDISCOVERY_Device_InitWifi(discoveryDevice, ARDISCOVERY_PRODUCT_JS,"JS",JS_IP_ADDRESS,JS_DISCOVERY_PORT);
+		errorDiscovery = ARDISCOVERY_Device_InitWifi(discoveryDevice,
+				ARDISCOVERY_PRODUCT_JS, "JS", JS_IP_ADDRESS, JS_DISCOVERY_PORT);
 
-		if(errorDiscovery != ARDISCOVERY_OK)
-		{
-            ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "Discovery error :%s", ARDISCOVERY_Error_ToString(errorDiscovery));
+		if (errorDiscovery != ARDISCOVERY_OK) {
+			ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "Discovery error :%s",
+					ARDISCOVERY_Error_ToString(errorDiscovery));
 			return NULL;
 		}
-	}
-	else
-	{
-		 ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "Discovery error :%s", ARDISCOVERY_Error_ToString(errorDiscovery));
-		 return NULL;
+	} else {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "Discovery error :%s",
+				ARDISCOVERY_Error_ToString(errorDiscovery));
+		return NULL;
 	}
 
-	ARSAL_PRINT (ARSAL_PRINT_INFO, TAG_JS_CMD, "Creation of discovery device succeeded");
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_JS_CMD,
+			"Creation of discovery device succeeded");
 	return discoveryDevice;
 }
 
-ARCONTROLLER_Device_t * createDeviceController(ARDISCOVERY_Device_t *discoveryDevice)
-{
-    eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-    ARCONTROLLER_Device_t *deviceController = NULL;
+ARCONTROLLER_Device_t * createDeviceController(
+		ARDISCOVERY_Device_t *discoveryDevice) {
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+	ARCONTROLLER_Device_t *deviceController = NULL;
 
-    deviceController = ARCONTROLLER_Device_New (discoveryDevice, &errorController);
+	deviceController = ARCONTROLLER_Device_New(discoveryDevice,
+			&errorController);
 
-    if(errorController != ARCONTROLLER_OK)
-    {
-        ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_JS_CMD, "Creation of device controller failed.");
-    	return NULL;
-    }
-    ARSAL_PRINT (ARSAL_PRINT_INFO, TAG_JS_CMD, "Creation of device controller succeeded.");
-    ARDISCOVERY_Device_Delete(&discoveryDevice);
-    return deviceController;
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"Creation of device controller failed.");
+		return NULL;
+	}
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_JS_CMD,
+			"Creation of device controller succeeded.");
+	ARDISCOVERY_Device_Delete(&discoveryDevice);
+	return deviceController;
 }
 
-
-
-int startDeviceController(ARCONTROLLER_Device_t *deviceController)
-{
+int startDeviceController(ARCONTROLLER_Device_t *deviceController) {
 	int failed = 0;
 	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-    ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_JS_CMD, "Start device controller and try connecting...");
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_JS_CMD,
+			"Start device controller and try connecting...");
 	errorController = ARCONTROLLER_Device_Start(deviceController);
 
-	if(errorController != ARCONTROLLER_OK)
-	{
-        ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, " start device controller failed ...");
-        failed = 1;
-	}
-	return failed;
-}
+	sleep(1);
 
-void stopDeviceController(ARCONTROLLER_Device_t *deviceController)
-{
-	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-    ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_JS_CMD, "disconnecting ...");
-	errorController = ARCONTROLLER_Device_Start(deviceController);
-
-	if(errorController != ARCONTROLLER_OK)
-	{
-		ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_JS_CMD, "add callback failed.");
-	}
-}
-
-eARCONTROLLER_DEVICE_STATE getDeviceState(ARCONTROLLER_Device_t *deviceController,ARSAL_Sem_t stateSem, eARCONTROLLER_DEVICE_STATE deviceState )
-{
-	// wait state update update
-	ARSAL_Sem_Wait (&(stateSem));
-
-	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-	deviceState = ARCONTROLLER_Device_GetState(deviceController,&errorController);
-
-	if ((errorController != ARCONTROLLER_OK) || (deviceState != ARCONTROLLER_DEVICE_STATE_RUNNING))
-	{
-		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "- deviceState :%d", deviceState);
-		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "- error :%s", ARCONTROLLER_Error_ToString(errorController));
-	}
-	return deviceState;
-}
-
-int sendJumpCommand(ARCONTROLLER_Device_t *deviceController,int jumpType)
-{
-	int failed = 0;
-	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
-
-	switch (jumpType) {
-		case JUMP_HIGH:
-			errorController = deviceController->jumpingSumo->sendAnimationsJump (deviceController->jumpingSumo,ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_HIGH);
-			break;
-		case JUMP_LONG:
-			errorController = deviceController->jumpingSumo->sendAnimationsJump (deviceController->jumpingSumo,ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_LONG);
-			break;
-		case JUMP_MAX:
-			errorController = deviceController->jumpingSumo->sendAnimationsJump (deviceController->jumpingSumo,ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_MAX);
-			break;
-		default:
-			break;
-	}
-
-	if(errorController != ARCONTROLLER_OK){
-		ARSAL_PRINT (ARSAL_PRINT_ERROR, TAG_JS_CMD, "send jump command failed ...");
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				" start device controller failed ...");
 		failed = 1;
 	}
 	return failed;
 }
 
-int sendGoCommand(ARCONTROLLER_Device_t *deviceController, int distance) {
+void stopDeviceController(ARCONTROLLER_Device_t *deviceController) {
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_JS_CMD, "disconnecting ...");
+	errorController = ARCONTROLLER_Device_Stop(deviceController);
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "add callback failed.");
+	}
+}
+
+eARCONTROLLER_DEVICE_STATE getDeviceState(
+		ARCONTROLLER_Device_t *deviceController, ARSAL_Sem_t stateSem,
+		eARCONTROLLER_DEVICE_STATE deviceState) {
+	// wait state update update
+	ARSAL_Sem_Wait(&(stateSem));
+
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+	deviceState = ARCONTROLLER_Device_GetState(deviceController,
+			&errorController);
+
+	if ((errorController != ARCONTROLLER_OK)
+			|| (deviceState != ARCONTROLLER_DEVICE_STATE_RUNNING)) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "- deviceState :%d",
+				deviceState);
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "- error :%s",
+				ARCONTROLLER_Error_ToString(errorController));
+	}
+	return deviceState;
+}
+
+// Commands sending
+int none(ARCONTROLLER_Device_t *deviceController) {
+	int failed = 0;
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+
+	errorController = deviceController->jumpingSumo->setPilotingPCMDFlag(
+			deviceController->jumpingSumo, 0);
+	errorController = deviceController->jumpingSumo->setPilotingPCMDSpeed(
+			deviceController->jumpingSumo, 0);
+	errorController = deviceController->jumpingSumo->setPilotingPCMDTurn(
+			deviceController->jumpingSumo, 0);
+
+	usleep(50000);
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"Send audio mode setting command failed ...");
+		failed = 1;
+	}
+
+
+	return failed;
+}
+
+int straight(ARCONTROLLER_Device_t *deviceController, int distance) {
 	int failed = 0;
 
 	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
 	errorController = deviceController->jumpingSumo->setPilotingPCMDFlag(
 			deviceController->jumpingSumo, 1);
 	errorController = deviceController->jumpingSumo->setPilotingPCMDSpeed(
-			deviceController->jumpingSumo, VELOCITY_PERCENT);
-	usleep(computeStraightUsleep(abs(distance), VELOCITY_PERCENT));
+			deviceController->jumpingSumo, speedPercentage);
+
+
+	// compute the suitable timer to get the appropriate distance function of speed percentage declared
+	usleep(distance * computeStraightUsleep(distance, speedPercentage));
+
+	none(deviceController);
 
 	if (errorController != ARCONTROLLER_OK) {
 		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
-				"send go command failed ...");
+				"send straight command failed ...");
 		failed = 1;
 	}
 	return failed;
 }
 
-int sendTurnCommand(ARCONTROLLER_Device_t *deviceController, int angle) {
+int turn(ARCONTROLLER_Device_t *deviceController, int angle) {
 	int failed = 0;
+
 	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
 	errorController = deviceController->jumpingSumo->setPilotingPCMDFlag(
 			deviceController->jumpingSumo, 1);
 	errorController = deviceController->jumpingSumo->setPilotingPCMDTurn(
 			deviceController->jumpingSumo, computeAnglePercent(angle));
-	usleep(50000);
+
+	//microseconds timer to let the minidrone receive the command
+	usleep(500000);
+
+	none(deviceController);
 
 	if (errorController != ARCONTROLLER_OK) {
 		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "send turn command failed");
@@ -560,44 +627,234 @@ int sendTurnCommand(ARCONTROLLER_Device_t *deviceController, int angle) {
 	return failed;
 }
 
-useconds_t computeStraightUsleep(int distance, int velocityPercent) {
-	useconds_t cmd_usleep;
+int jump(ARCONTROLLER_Device_t *deviceController, int jumpType) {
+	int failed = 0;
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
 
-	switch (velocityPercent) {
-	case 10:
-		cmd_usleep = 1000000; // equal to 1s to adjust
+	switch (jumpType) {
+	case JUMP_HIGH:
+		errorController = deviceController->jumpingSumo->sendAnimationsJump(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_HIGH);
 		break;
-	case 20:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 30:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 40:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 50:
-		cmd_usleep = distance * 735000 + distance * 130000;
-		break;
-	case 60:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 70:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 80:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 90:
-		cmd_usleep = 1000000; // equal to 1s to adjust
-		break;
-	case 100:
-		cmd_usleep = distance * 480000; // to adjust too
+	case JUMP_LONG:
+		errorController = deviceController->jumpingSumo->sendAnimationsJump(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_JUMP_TYPE_LONG);
 		break;
 	default:
 		break;
 	}
-	return cmd_usleep;
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"send jump command failed ...");
+		failed = 1;
+	}
+	return failed;
+}
+
+void timer(int duration) {
+	sleep(duration);
+}
+
+void speed(int newValue) {
+	speedPercentage = newValue;
+}
+
+int posture(ARCONTROLLER_Device_t *deviceController,
+		int postureType) {
+	int failed = 0;
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+
+	switch (postureType) {
+	case JUMPER:
+		errorController = deviceController->jumpingSumo->sendPilotingPosture(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_JUMPER);
+		break;
+	case KICKER:
+		errorController = deviceController->jumpingSumo->sendPilotingPosture(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_KICKER);
+		break;
+	case AUTOBALANCE:
+		errorController = deviceController->jumpingSumo->sendPilotingPosture(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_PILOTING_POSTURE_TYPE_STANDING);
+		break;
+	default:
+		break;
+	}
+	//microseconds timer to let the minidrone receive the command
+	usleep(MIN_USEC_TIMER);
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"Send piloting posture setting command failed ...");
+		failed = 1;
+	}
+	return failed;
+}
+
+int animation(ARCONTROLLER_Device_t *deviceController, int animation) {
+	int failed = 0;
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+
+	switch (animation) {
+	case TOUCH:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_TAP);
+		break;
+	case SHAKE:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SLOWSHAKE);
+		break;
+	case METRONOME:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_METRONOME);
+		break;
+	case WAVE:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_ONDULATION);
+		break;
+	case SPIN:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPIN);
+		break;
+	case SPINJUMP:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPINJUMP);
+		break;
+	case SPINPOSTURE:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPINTOPOSTURE);
+		break;
+	case SLALOM:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SLALOM);
+		break;
+	case SPIRAL:
+		deviceController->jumpingSumo->sendAnimationsSimpleAnimation(deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_ANIMATIONS_SIMPLEANIMATION_ID_SPIRAL);
+		break;
+	default:
+		break;
+	}
+
+	usleep(2000000);
+
+	none(deviceController);
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD, "send turn command failed");
+		failed = 1;
+	}
+	return failed;
+}
+
+int audio(ARCONTROLLER_Device_t *deviceController,
+		int audioMode) {
+	int failed = 0;
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+
+	// Setting the audio mode
+	switch (audioMode) {
+	case MONSTER:
+		errorController = deviceController->jumpingSumo->sendAudioSettingsTheme(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_MONSTER);
+		break;
+	case INSECT:
+		errorController = deviceController->jumpingSumo->sendAudioSettingsTheme(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_INSECT);
+		break;
+	case ROBOT:
+		errorController = deviceController->jumpingSumo->sendAudioSettingsTheme(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_ROBOT);
+		break;
+	default:
+		errorController = deviceController->jumpingSumo->sendAudioSettingsTheme(
+				deviceController->jumpingSumo,
+				ARCOMMANDS_JUMPINGSUMO_AUDIOSETTINGS_THEME_THEME_DEFAULT);
+		break;
+	}
+
+	//microsecond timer to let the minidrone receive the command
+	usleep(MIN_USEC_TIMER);
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"Send audio mode setting command failed ...");
+		failed = 1;
+	}
+	return failed;
+}
+
+int volume(ARCONTROLLER_Device_t *deviceController,
+		int volumePercentage) {
+	int failed = 0;
+	eARCONTROLLER_ERROR errorController = ARCONTROLLER_OK;
+
+	// setting the volume percentage
+	errorController =
+			deviceController->jumpingSumo->sendAudioSettingsMasterVolume(
+					deviceController->jumpingSumo, volumePercentage);
+
+	if (errorController != ARCONTROLLER_OK) {
+		ARSAL_PRINT(ARSAL_PRINT_ERROR, TAG_JS_CMD,
+				"Send audio mode setting command failed ...");
+		failed = 1;
+	}
+
+	return failed;
+}
+
+useconds_t computeStraightUsleep(int distance, int speedPercent) {
+	useconds_t u_timer;
+
+	switch (speedPercent) {
+	case 20:
+		u_timer = U_TIMER_SPEED_20;
+		break;
+	case 30:
+		u_timer = U_TIMER_SPEED_30;
+		break;
+	case 40:
+		u_timer = U_TIMER_SPEED_40;
+		break;
+	case 50:
+		u_timer = U_TIMER_SPEED_50;
+		break;
+	case 60:
+		u_timer = U_TIMER_SPEED_60;
+		break;
+	case 70:
+		u_timer = U_TIMER_SPEED_70;
+		break;
+	case 80:
+		u_timer = U_TIMER_SPEED_80;
+		break;
+	case 90:
+		u_timer = U_TIMER_SPEED_90;
+		break;
+	case 100:
+		u_timer = U_TIMER_SPEED_100;
+		break;
+	default:
+		break;
+	}
+	return u_timer;
 }
 
 int computeAnglePercent(int angle) {
