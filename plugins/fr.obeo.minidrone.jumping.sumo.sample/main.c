@@ -16,7 +16,7 @@
  *
  *****************************************/
 
-#include "JSPilotingMinimalCommands.h"
+#include "JumpingSumoPiloting.h"
 
 /*****************************************
  *
@@ -32,13 +32,11 @@ void stateChanged(eARCONTROLLER_DEVICE_STATE newState,
 	switch (newState) {
 	case ARCONTROLLER_DEVICE_STATE_STOPPED:
 		ARSAL_Sem_Post(&(stateSem));
-		//run = 0;
 		break;
 
 	case ARCONTROLLER_DEVICE_STATE_RUNNING:
 		ARSAL_Sem_Post(&(stateSem));
 		break;
-
 	default:
 		break;
 	}
@@ -91,8 +89,9 @@ void commandReceived(eARCONTROLLER_DICTIONARY_KEY commandKey,
 int main(int argc, char **argv) {
 	//local declarations
 	int error = 0;
+	speedPercentage = DEFAULT_SPEED_PERCENT;
 	ARSAL_Sem_Init(&(stateSem), 0, 0);
-	eARCONTROLLER_DEVICE_STATE deviceState = ARCONTROLLER_DEVICE_STATE_MAX;
+	eARCONTROLLER_DEVICE_STATE deviceState;
 	ARDISCOVERY_Device_t *discoveryDevice = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
 
@@ -147,22 +146,28 @@ int main(int argc, char **argv) {
 	if (!error) {
 		error = startDeviceController(deviceController);
 	}
-	sleep(1);
 
 	/*****************************************
 	 *
-	 *			Piloting
+	 *			Piloting step
 	 *
 	 *****************************************/
-	// Send go command
-	if (!error) {
-		error = sendGoCommand(deviceController, 2);
-	}
+	// Straight 1 m
+	straight(deviceController, 2);
 
-	// Send turn command
-	if (!error) {
-		error = sendTurnCommand(deviceController, 90);
-	}
+	turn(deviceController, 90);
+
+	timer(10);
+
+	posture(deviceController, AUTOBALANCE);
+
+	animation(deviceController, SPIRAL);
+
+	audio(deviceController, ROBOT);
+
+	volume(deviceController, 10);
+
+	straight(deviceController,2);
 
 	/*****************************************
 	 *

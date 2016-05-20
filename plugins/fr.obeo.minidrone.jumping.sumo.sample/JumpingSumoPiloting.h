@@ -10,8 +10,8 @@
  *
  */
 
-#ifndef JSPILOTINGMINIMALCOMMANDS_H_
-#define JSPILOTINGMINIMALCOMMANDS_H_
+#ifndef JUMPINGSUMOPILOTING_H_
+#define JUMPINGSUMOPILOTING_H_
 
 /*****************************************
  *
@@ -33,16 +33,54 @@
  *             define :
  *
  *****************************************/
-#define VELOCITY_PERCENT 50 // from 0 to 100
+#define DEFAULT_SPEED_PERCENT 50
 #define ANGLE_MAX 360
 #define TAG_JS_CMD "JSPilotingMinCommands"
 #define TAG_MAIN "Main"
 #define JS_IP_ADDRESS "192.168.2.1"
 #define JS_DISCOVERY_PORT 44444
+
+// Minimal utimer
+#define MIN_USEC_TIMER 500000
+
+// Unit utimers
+#define U_TIMER_SPEED_20 4500000
+#define U_TIMER_SPEED_30 2000000
+#define U_TIMER_SPEED_40 1300000
+#define U_TIMER_SPEED_50 860000
+#define U_TIMER_SPEED_60 650000
+#define U_TIMER_SPEED_70 570000
+#define U_TIMER_SPEED_80 400000
+#define U_TIMER_SPEED_90 350000
+#define U_TIMER_SPEED_100 300000
+
+//Jump mode
 #define JUMP_LONG 0
 #define JUMP_HIGH 1
-#define JUMP_MAX 2
+
+//Posture mode
+#define JUMPER 0
+#define KICKER 1
+#define AUTOBALANCE 2
+
+//Audio Mode
+#define MONSTER 0
+#define INSECT 1
+#define ROBOT 2
+
+//Animations
+#define SPIN 0
+#define TOUCH 1
+#define SHAKE 2
+#define METRONOME 3
+#define WAVE 4
+#define SPINJUMP 5
+#define SLALOM 6
+#define SPINPOSTURE 7
+#define SPIRAL 8
+
 ARSAL_Sem_t stateSem;
+int speedPercentage;
 
 // called to create and init a discovery device; implies a JS discovery device creation with Wifi init
 ARDISCOVERY_Device_t * createInitDiscoveryDevice();
@@ -65,25 +103,40 @@ void stopDeviceController(ARCONTROLLER_Device_t *deviceController);
 // called to get the state of the JS
 eARCONTROLLER_DEVICE_STATE getDeviceState(ARCONTROLLER_Device_t *deviceController,ARSAL_Sem_t stateSem, eARCONTROLLER_DEVICE_STATE deviceState );
 
-// called when a command has been received from the drone
-//void commandReceived (eARCONTROLLER_DICTIONARY_KEY commandKey, ARCONTROLLER_DICTIONARY_ELEMENT_t *elementDictionary, void *customData);
+// Called to send a none command
+int none(ARCONTROLLER_Device_t *deviceController);
 
-// called when the state of the device controller has changed
-//void stateChanged (eARCONTROLLER_DEVICE_STATE newState, eARCONTROLLER_ERROR error, void *customData,ARSAL_Sem_t stateSem);
+// Called to send a command making go straight the JS
+int straight(ARCONTROLLER_Device_t *deviceController,int distance);
 
-// called to send a jump command to the JS
-int sendJumpCommand(ARCONTROLLER_Device_t *deviceController,int jumpType);
+// Called to send a command making turn the JS
+int turn(ARCONTROLLER_Device_t *deviceController,int angle);
 
-// called to send a forward command to the JS
-int sendGoCommand(ARCONTROLLER_Device_t *deviceController,int distance);
+// Called to send a command making jump the JS
+int jump(ARCONTROLLER_Device_t *deviceController,int jumpMode);
 
-// called to send a right roll command to the JS
-int sendTurnCommand(ARCONTROLLER_Device_t *deviceController,int angle);
+// Called to run a timer in seconds
+void timer(int duration);
 
-// called to compute the microsecond sleep when we send command to make straight the minidrone
-useconds_t computeStraightUsleep(int distance,int velocityPercent);
+// Called to send a command setting speed percentage
+void speed(int newValue);
 
-// called to compute angle percent
+// Called to send a command to set the piloting posture of the JS
+int posture(ARCONTROLLER_Device_t *deviceController, int postureMode);
+
+// Called to send a command to make the js animate (acrobatics)
+int animation(ARCONTROLLER_Device_t *deviceController, int animation);
+
+// Called to send a command setting audio theme and volume of the JS
+int audio(ARCONTROLLER_Device_t *deviceController, int audioMode);
+
+// Called to set the volume
+int volume(ARCONTROLLER_Device_t *deviceController, int volumePercentage);
+
+// Called to compute the microsecond sleep when we send command to make straight the JS
+useconds_t computeStraightUsleep(int distance, int velocityPercent);
+
+// Called to compute angle percent
 int computeAnglePercent(int angle);
 
-#endif /* JSPILOTINGMINIMALCOMMANDS_H_ */
+#endif /* JUMPINGSUMOPILOTING_H_ */
