@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:minidrone="http://www.obeo.fr/dsl/minidrone/1.0.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_Hpo2UCG8EeaJr8Acaq_0WQ" selectedViews="__f6EMCG9EeaJr8Acaq_0WQ" version="10.1.0.201509162000">
+  <semanticResources>sample.minidrone</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="__f6EMCG9EeaJr8Acaq_0WQ">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="__jdugCG9EeaJr8Acaq_0WQ" name="MiniDrone Program Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="__jdugSG9EeaJr8Acaq_0WQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="__jdugiG9EeaJr8Acaq_0WQ"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="__kQ_wCG9EeaJr8Acaq_0WQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="__kQ_wSG9EeaJr8Acaq_0WQ" type="Sirius" element="__jdugCG9EeaJr8Acaq_0WQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="__kjToCG9EeaJr8Acaq_0WQ" type="2001" element="__jdugyG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__ltxQCG9EeaJr8Acaq_0WQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__ltxQSG9EeaJr8Acaq_0WQ" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__x3W4CG9EeaJr8Acaq_0WQ" type="3005" element="__jduhCG9EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__x3W4SG9EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__x3W4iG9EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__kjToSG9EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__kjToiG9EeaJr8Acaq_0WQ" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__xOdsCG9EeaJr8Acaq_0WQ" type="2001" element="__jduhSG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__xPr0CG9EeaJr8Acaq_0WQ" visible="false" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__xPr0SG9EeaJr8Acaq_0WQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__x398CG9EeaJr8Acaq_0WQ" type="3005" element="__jduhyG9EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__x398SG9EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__x398iG9EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__xOdsSG9EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="7"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__xOdsiG9EeaJr8Acaq_0WQ" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__xfjcCG9EeaJr8Acaq_0WQ" type="2001" element="__jduiCG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__xgKgCG9EeaJr8Acaq_0WQ" visible="false" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__xgKgSG9EeaJr8Acaq_0WQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__x4lACG9EeaJr8Acaq_0WQ" type="3005" element="__jduiiG9EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__x4lASG9EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__x4lAiG9EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__xfjcSG9EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__xfjciG9EeaJr8Acaq_0WQ" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__xm4MCG9EeaJr8Acaq_0WQ" type="2001" element="__jduiyG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__xm4MyG9EeaJr8Acaq_0WQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__xm4NCG9EeaJr8Acaq_0WQ" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__x5MECG9EeaJr8Acaq_0WQ" type="3005" element="__jdujCG9EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__x5MESG9EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__x5MEiG9EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__xm4MSG9EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__xm4MiG9EeaJr8Acaq_0WQ" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__xxQQCG9EeaJr8Acaq_0WQ" type="2001" element="__jdujSG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__xx3UCG9EeaJr8Acaq_0WQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__xx3USG9EeaJr8Acaq_0WQ" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__x5zICG9EeaJr8Acaq_0WQ" type="3005" element="__jdujiG9EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__x5zISG9EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__x5zIiG9EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__xxQQSG9EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__xxQQiG9EeaJr8Acaq_0WQ" width="64" height="64"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="__kQ_wiG9EeaJr8Acaq_0WQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="__ydz0CG9EeaJr8Acaq_0WQ" type="4001" element="__jdujyG9EeaJr8Acaq_0WQ" source="__xm4MCG9EeaJr8Acaq_0WQ" target="__kjToCG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__yfpACG9EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__yfpASG9EeaJr8Acaq_0WQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__yfpAiG9EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__yfpAyG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__ygQECG9EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__ygQESG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="__ydz0SG9EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="__ydz0iG9EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__ydz0yG9EeaJr8Acaq_0WQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y3ccCG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y3ccSG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="__y4DgCG9EeaJr8Acaq_0WQ" type="4001" element="__jdukiG9EeaJr8Acaq_0WQ" source="__xxQQCG9EeaJr8Acaq_0WQ" target="__xm4MCG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__y4qkCG9EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y4qkSG9EeaJr8Acaq_0WQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__y4qkiG9EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y4qkyG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__y4qlCG9EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y4qlSG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="__y4DgSG9EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="__y4DgiG9EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__y4DgyG9EeaJr8Acaq_0WQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y5RoCG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y5RoSG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="__y5RoiG9EeaJr8Acaq_0WQ" type="4001" element="__jdulSG9EeaJr8Acaq_0WQ" source="__xOdsCG9EeaJr8Acaq_0WQ" target="__xxQQCG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__y5RpiG9EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y5RpyG9EeaJr8Acaq_0WQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__y5RqCG9EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y5RqSG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__y5RqiG9EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y54sCG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="__y5RoyG9EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="__y5RpCG9EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__y5RpSG9EeaJr8Acaq_0WQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y54sSG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y54siG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="__y54syG9EeaJr8Acaq_0WQ" type="4001" element="__jdumCG9EeaJr8Acaq_0WQ" source="__kjToCG9EeaJr8Acaq_0WQ" target="__xfjcCG9EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="__y6fwCG9EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y6fwSG9EeaJr8Acaq_0WQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__y6fwiG9EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y6fwyG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__y6fxCG9EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__y6fxSG9EeaJr8Acaq_0WQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="__y54tCG9EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="__y54tSG9EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__y54tiG9EeaJr8Acaq_0WQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y7G0CG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__y7G0SG9EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__jdugyG9EeaJr8Acaq_0WQ" name="long" outgoingEdges="__jdumCG9EeaJr8Acaq_0WQ" incomingEdges="__jdujyG9EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:Jump" href="sample.minidrone#//@instructions.2"/>
+        <semanticElements xmi:type="minidrone:Jump" href="sample.minidrone#//@instructions.2"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__jduhCG9EeaJr8Acaq_0WQ" showIcon="false" labelColor="69,69,69" workspacePath="/fr.obeo.dsl.minidrone.design/images/Jump_64px.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__jduhSG9EeaJr8Acaq_0WQ" outgoingEdges="__jdulSG9EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <semanticElements xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__jduhiG9EeaJr8Acaq_0WQ"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__jduhyG9EeaJr8Acaq_0WQ" labelSize="7" showIcon="false" labelColor="69,69,69" labelAlignment="LEFT" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.minidrone.design/images/Begin_64px.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__jduiCG9EeaJr8Acaq_0WQ" incomingEdges="__jdumCG9EeaJr8Acaq_0WQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <semanticElements xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__jduiSG9EeaJr8Acaq_0WQ"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__jduiiG9EeaJr8Acaq_0WQ" showIcon="false" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.minidrone.design/images/End_64px.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_End']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_End']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__jduiyG9EeaJr8Acaq_0WQ" name="angle 0°" outgoingEdges="__jdujyG9EeaJr8Acaq_0WQ" incomingEdges="__jdukiG9EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:Turn" href="sample.minidrone#//@instructions.1"/>
+        <semanticElements xmi:type="minidrone:Turn" href="sample.minidrone#//@instructions.1"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__jdujCG9EeaJr8Acaq_0WQ" showIcon="false" labelColor="69,69,69" workspacePath="/fr.obeo.dsl.minidrone.design/images/Turn_64px.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__jdujSG9EeaJr8Acaq_0WQ" name="0 m" outgoingEdges="__jdukiG9EeaJr8Acaq_0WQ" incomingEdges="__jdulSG9EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:Straight" href="sample.minidrone#//@instructions.0"/>
+        <semanticElements xmi:type="minidrone:Straight" href="sample.minidrone#//@instructions.0"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__jdujiG9EeaJr8Acaq_0WQ" showIcon="false" labelColor="69,69,69" workspacePath="/fr.obeo.dsl.minidrone.design/images/Straight_64px.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__jdujyG9EeaJr8Acaq_0WQ" sourceNode="__jduiyG9EeaJr8Acaq_0WQ" targetNode="__jdugyG9EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:Turn" href="sample.minidrone#//@instructions.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__jdukCG9EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__jdukSG9EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__jdukiG9EeaJr8Acaq_0WQ" sourceNode="__jdujSG9EeaJr8Acaq_0WQ" targetNode="__jduiyG9EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:Straight" href="sample.minidrone#//@instructions.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__jdukyG9EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__jdulCG9EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__jdulSG9EeaJr8Acaq_0WQ" sourceNode="__jduhSG9EeaJr8Acaq_0WQ" targetNode="__jdujSG9EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__jduliG9EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_Begin']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__jdulyG9EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_Begin']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__jdumCG9EeaJr8Acaq_0WQ" sourceNode="__jdugyG9EeaJr8Acaq_0WQ" targetNode="__jduiCG9EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:Jump" href="sample.minidrone#//@instructions.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__jdumSG9EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_End']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__jdumiG9EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_End']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="__jdumyG9EeaJr8Acaq_0WQ"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer"/>
+      <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_BjP08CG-EeaJr8Acaq_0WQ" name="new MiniDrone Program Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BjP08SG-EeaJr8Acaq_0WQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_BjP08iG-EeaJr8Acaq_0WQ"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BjRDECG-EeaJr8Acaq_0WQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_BjRDESG-EeaJr8Acaq_0WQ" type="Sirius" element="_BjP08CG-EeaJr8Acaq_0WQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_BjRqICG-EeaJr8Acaq_0WQ" type="2001" element="_BjP08yG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjSRMCG-EeaJr8Acaq_0WQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BjSRMSG-EeaJr8Acaq_0WQ" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjnBUCG-EeaJr8Acaq_0WQ" type="3005" element="_BjP09CG-EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BjnBUSG-EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjnBUiG-EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BjRqISG-EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjRqIiG-EeaJr8Acaq_0WQ" x="785" y="95" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BjbbICG-EeaJr8Acaq_0WQ" type="2001" element="_BjP09SG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjbbIyG-EeaJr8Acaq_0WQ" visible="false" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BjbbJCG-EeaJr8Acaq_0WQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjnBUyG-EeaJr8Acaq_0WQ" type="3005" element="_BjP09yG-EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BjnBVCG-EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjnBVSG-EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BjbbISG-EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="7"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjbbIiG-EeaJr8Acaq_0WQ" x="62" y="150" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Bjd3YCG-EeaJr8Acaq_0WQ" type="2001" element="_BjP0-CG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjeecCG-EeaJr8Acaq_0WQ" visible="false" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BjeecSG-EeaJr8Acaq_0WQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjnoYCG-EeaJr8Acaq_0WQ" type="3005" element="_BjP0-iG-EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BjnoYSG-EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjnoYiG-EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Bjd3YSG-EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bjd3YiG-EeaJr8Acaq_0WQ" x="960" y="95" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BjhhwCG-EeaJr8Acaq_0WQ" type="2001" element="_BjP0-yG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjhhwyG-EeaJr8Acaq_0WQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BjhhxCG-EeaJr8Acaq_0WQ" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjoPcCG-EeaJr8Acaq_0WQ" type="3005" element="_BjP0_CG-EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BjoPcSG-EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjoPciG-EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BjhhwSG-EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjhhwiG-EeaJr8Acaq_0WQ" x="610" y="87" width="64" height="64"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Bjj-ACG-EeaJr8Acaq_0WQ" type="2001" element="_BjP0_SG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjklECG-EeaJr8Acaq_0WQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BjklESG-EeaJr8Acaq_0WQ" y="-21"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Bjo2gCG-EeaJr8Acaq_0WQ" type="3005" element="_BjP0_iG-EeaJr8Acaq_0WQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Bjo2gSG-EeaJr8Acaq_0WQ" fontName="Droid Sans"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bjo2giG-EeaJr8Acaq_0WQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Bjj-ASG-EeaJr8Acaq_0WQ" fontColor="4539717" fontName="Droid Sans" fontHeight="8" bold="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bjj-AiG-EeaJr8Acaq_0WQ" x="187" y="150" width="64" height="64"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_BjRDEiG-EeaJr8Acaq_0WQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_BjpdkCG-EeaJr8Acaq_0WQ" type="4001" element="_BjP0_yG-EeaJr8Acaq_0WQ" source="_BjhhwCG-EeaJr8Acaq_0WQ" target="_BjRqICG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjpdlCG-EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjpdlSG-EeaJr8Acaq_0WQ" x="-7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjqEoCG-EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjqEoSG-EeaJr8Acaq_0WQ" x="-4" y="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjqEoiG-EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjqEoyG-EeaJr8Acaq_0WQ" x="-12" y="-2"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_BjpdkSG-EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_BjpdkiG-EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BjpdkyG-EeaJr8Acaq_0WQ" points="[32, 2, -143, -6]$[143, 11, -32, 3]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BjqrsCG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BjqrsSG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_BjqrsiG-EeaJr8Acaq_0WQ" type="4001" element="_BjP1AiG-EeaJr8Acaq_0WQ" source="_Bjj-ACG-EeaJr8Acaq_0WQ" target="_BjhhwCG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjrSwCG-EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjrSwSG-EeaJr8Acaq_0WQ" x="25" y="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjrSwiG-EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjrSwyG-EeaJr8Acaq_0WQ" x="-55"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjrSxCG-EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjrSxSG-EeaJr8Acaq_0WQ" x="-39" y="-2"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_BjqrsyG-EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_BjqrtCG-EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BjqrtSG-EeaJr8Acaq_0WQ" points="[31, -5, -392, 58]$[391, -59, -32, 4]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Bjr50CG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Bjr50SG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Bjr50iG-EeaJr8Acaq_0WQ" type="4001" element="_BjP1BSG-EeaJr8Acaq_0WQ" source="_BjbbICG-EeaJr8Acaq_0WQ" target="_Bjj-ACG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_Bjsg4CG-EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bjsg4SG-EeaJr8Acaq_0WQ" x="4" y="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Bjsg4iG-EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bjsg4yG-EeaJr8Acaq_0WQ" x="-9" y="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Bjsg5CG-EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bjsg5SG-EeaJr8Acaq_0WQ" x="-7"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Bjr50yG-EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Bjr51CG-EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Bjr51SG-EeaJr8Acaq_0WQ" points="[13, -32, -112, -32]$[93, -10, -32, -10]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BjtH8CG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BjtH8SG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_BjtvACG-EeaJr8Acaq_0WQ" type="4001" element="_BjP1CCG-EeaJr8Acaq_0WQ" source="_BjRqICG-EeaJr8Acaq_0WQ" target="_Bjd3YCG-EeaJr8Acaq_0WQ">
+            <children xmi:type="notation:Node" xmi:id="_BjtvBCG-EeaJr8Acaq_0WQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjtvBSG-EeaJr8Acaq_0WQ" x="-7" y="-5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjtvBiG-EeaJr8Acaq_0WQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjtvByG-EeaJr8Acaq_0WQ" x="-5" y="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BjuWECG-EeaJr8Acaq_0WQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjuWESG-EeaJr8Acaq_0WQ" x="-3" y="-2"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_BjtvASG-EeaJr8Acaq_0WQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_BjtvAiG-EeaJr8Acaq_0WQ" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BjtvAyG-EeaJr8Acaq_0WQ" points="[32, 0, -143, 0]$[143, 2, -32, 2]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Bju9ICG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Bju9ISG-EeaJr8Acaq_0WQ" id="(0.5,0.5)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BjP08yG-EeaJr8Acaq_0WQ" name="long" outgoingEdges="_BjP1CCG-EeaJr8Acaq_0WQ" incomingEdges="_BjP0_yG-EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:Jump" href="sample.minidrone#//@instructions.2"/>
+        <semanticElements xmi:type="minidrone:Jump" href="sample.minidrone#//@instructions.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_BjP09CG-EeaJr8Acaq_0WQ" showIcon="false" labelColor="69,69,69" workspacePath="/fr.obeo.dsl.minidrone.design/images/Jump_64px.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BjP09SG-EeaJr8Acaq_0WQ" outgoingEdges="_BjP1BSG-EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <semanticElements xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_BjP09iG-EeaJr8Acaq_0WQ"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_BjP09yG-EeaJr8Acaq_0WQ" labelSize="7" showIcon="false" labelColor="69,69,69" labelAlignment="LEFT" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.minidrone.design/images/Begin_64px.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BjP0-CG-EeaJr8Acaq_0WQ" incomingEdges="_BjP1CCG-EeaJr8Acaq_0WQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <semanticElements xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_BjP0-SG-EeaJr8Acaq_0WQ"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_BjP0-iG-EeaJr8Acaq_0WQ" showIcon="false" hideLabelByDefault="true" workspacePath="/fr.obeo.dsl.minidrone.design/images/End_64px.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_End']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_End']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BjP0-yG-EeaJr8Acaq_0WQ" name="angle 0°" outgoingEdges="_BjP0_yG-EeaJr8Acaq_0WQ" incomingEdges="_BjP1AiG-EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:Turn" href="sample.minidrone#//@instructions.1"/>
+        <semanticElements xmi:type="minidrone:Turn" href="sample.minidrone#//@instructions.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_BjP0_CG-EeaJr8Acaq_0WQ" showIcon="false" labelColor="69,69,69" workspacePath="/fr.obeo.dsl.minidrone.design/images/Turn_64px.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_BjP0_SG-EeaJr8Acaq_0WQ" name="0 m" outgoingEdges="_BjP1AiG-EeaJr8Acaq_0WQ" incomingEdges="_BjP1BSG-EeaJr8Acaq_0WQ" width="-1" height="-1">
+        <target xmi:type="minidrone:Straight" href="sample.minidrone#//@instructions.0"/>
+        <semanticElements xmi:type="minidrone:Straight" href="sample.minidrone#//@instructions.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_BjP0_iG-EeaJr8Acaq_0WQ" showIcon="false" labelColor="69,69,69" workspacePath="/fr.obeo.dsl.minidrone.design/images/Straight_64px.svg">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_BjP0_yG-EeaJr8Acaq_0WQ" sourceNode="_BjP0-yG-EeaJr8Acaq_0WQ" targetNode="_BjP08yG-EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:Turn" href="sample.minidrone#//@instructions.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_BjP1ACG-EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_BjP1ASG-EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_BjP1AiG-EeaJr8Acaq_0WQ" sourceNode="_BjP0_SG-EeaJr8Acaq_0WQ" targetNode="_BjP0-yG-EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:Straight" href="sample.minidrone#//@instructions.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_BjP1AyG-EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_BjP1BCG-EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_BjP1BSG-EeaJr8Acaq_0WQ" sourceNode="_BjP09SG-EeaJr8Acaq_0WQ" targetNode="_BjP0_SG-EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_BjP1BiG-EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_Begin']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_BjP1ByG-EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_Begin']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_BjP1CCG-EeaJr8Acaq_0WQ" sourceNode="_BjP08yG-EeaJr8Acaq_0WQ" targetNode="_BjP0-CG-EeaJr8Acaq_0WQ">
+        <target xmi:type="minidrone:Jump" href="sample.minidrone#//@instructions.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_BjP1CSG-EeaJr8Acaq_0WQ" size="2" centered="Both" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_End']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_BjP1CiG-EeaJr8Acaq_0WQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@edgeMappings[name='MPD_Flow_End']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_BjP1CyG-EeaJr8Acaq_0WQ"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer"/>
+      <target xmi:type="minidrone:MiniDroneProgram" href="sample.minidrone#50"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/fr.obeo.dsl.minidrone.design/description/minidrone.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
