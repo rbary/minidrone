@@ -87,14 +87,14 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="MPD_AudioTheme" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='AudioTheme']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Audio">
+        <nodeMappings name="MPD_Audio" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='AudioTheme']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Audio">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Audio_Theme_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="MPD_Flow" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_AudioTheme']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_AudioTheme']" targetFinderExpression="aql:self.getNextInstruction()">
+        <edgeMappings name="MPD_Flow" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio']" targetFinderExpression="aql:self.getNextInstruction()">
           <style sizeComputationExpression="2" endsCentering="Both">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
             <centerLabelStyleDescription>
@@ -102,7 +102,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="MPD_Flow_Begin" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_AudioTheme']" targetFinderExpression="aql:self.instructions->first()">
+        <edgeMappings name="MPD_Flow_Begin" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Begin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio']" targetFinderExpression="aql:self.instructions->first()">
           <style sizeComputationExpression="2" endsCentering="Both">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
             <centerLabelStyleDescription>
@@ -110,7 +110,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="MPD_Flow_End" preconditionExpression="aql:self.isTheLastInstruction()" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_AudioTheme'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_End']" targetFinderExpression="aql:self.eContainer()">
+        <edgeMappings name="MPD_Flow_End" preconditionExpression="aql:self.isTheLastInstruction()" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@containerMappings[name='MPD_Block'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_End']" targetFinderExpression="aql:self.eContainer()">
           <style sizeComputationExpression="2" endsCentering="Both">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
             <centerLabelStyleDescription>
@@ -140,30 +140,8 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
-        <toolSections name="Control">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Jump" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Jump_18px.svg">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Jump" referenceName="instructions">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="jumpType"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Timer" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Timer_18px.svg">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Timer" referenceName="instructions">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="duration" valueExpression="1"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Animation" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Animation_18px.svg">
+        <toolSections name="Control" icon="/fr.obeo.dsl.minidrone.design/icons/Control_18px.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Animation" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Animation_18px.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -174,7 +152,40 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Turn" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Turn_18px.svg">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Jump" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Jump_18px.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Jump" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="jumpType"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Straight" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Straight_18px.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Straight" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="1"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Timer" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Timer_18px.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Timer" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="duration" valueExpression="1"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Turn" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Turn_18px.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -182,17 +193,6 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Turn" referenceName="instructions">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="angle" valueExpression="0"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="radius" valueExpression="0"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Straight" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Straight_18px.svg">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Straight" referenceName="instructions">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="1"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -425,8 +425,19 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
-        <toolSections name="Setting">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Posture" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Posture_18px.svg">
+        <toolSections name="Settings" icon="/fr.obeo.dsl.minidrone.design/icons/Settings_18px.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Audio" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Audio_18px.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Audio" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="mode" valueExpression="ROBOT"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Posture" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Posture_18px.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -437,7 +448,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Speed" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Speed_18px.svg">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Speed" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Speed_18px.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -448,24 +459,13 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Volume" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Volume_18px.svg">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Volume" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Volume_18px.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Volume" referenceName="instructions">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="percentage" valueExpression="10"/>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Audio theme" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_AudioTheme']" iconPath="/fr.obeo.dsl.minidrone.design/icons/Audio_Theme_18px.svg">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Audio" referenceName="instructions">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="mode" valueExpression="ROBOT"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
