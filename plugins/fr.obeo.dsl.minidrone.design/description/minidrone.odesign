@@ -118,7 +118,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="MPD_Block" semanticCandidatesExpression="feature:instructions" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='Block']" domainClass="minidrone.Block" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume']" childrenPresentation="List">
+        <containerMappings name="MPD_Block" semanticCandidatesExpression="feature:instructions" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='Block']" domainClass="minidrone.Block" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Animation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Audio'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Jump'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Posture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Record_Video'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Speed'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Straight'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Take_Picture'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Timer'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Turn'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@nodeMappings[name='MPD_Volume']">
           <subNodeMappings name="MPDB_SubBlock" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Block">
             <style xsi:type="style:SquareDescription" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -126,11 +126,13 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.computeLabel()">
+          <style xsi:type="style:FlatContainerStyleDescription" labelSize="10" labelExpression="aql:self.computeLabel()" roundedCorner="true" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.2"/>
           </style>
         </containerMappings>
         <toolSections name="Control" icon="/fr.obeo.dsl.minidrone.design/icons/Control_18px.gif">
@@ -470,7 +472,9 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Block" referenceName="instructions"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="minidrone.Block" referenceName="instructions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="new"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

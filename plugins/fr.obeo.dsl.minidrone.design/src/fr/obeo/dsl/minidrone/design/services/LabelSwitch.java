@@ -24,7 +24,8 @@ public class LabelSwitch extends MiniDroneSwitch<String> {
 
     // Block instruction case
     public String caseBlock(Block block) {
-        return "Block"; //$NON-NLS-1$
+        String label = "Block "+block.getName(); //$NON-NLS-1$
+        return label; 
     }
 
     // Loop instruction case
