@@ -438,17 +438,17 @@
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_JhaZIBkdEeaiGaR45MvpWw" type="4001" element="_Jgz8MBkdEeaiGaR45MvpWw" source="_nkUb4AJPEean75NpvDj3rg" target="_16XVYAJEEean75NpvDj3rg">
             <children xmi:type="notation:Node" xmi:id="_JhbAMBkdEeaiGaR45MvpWw" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JhbAMRkdEeaiGaR45MvpWw" x="-27" y="-13"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JhbAMRkdEeaiGaR45MvpWw" x="7" y="-27"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_JhbAMhkdEeaiGaR45MvpWw" type="6002">
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JhbAMxkdEeaiGaR45MvpWw" x="-8" y="-16"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_JhbANBkdEeaiGaR45MvpWw" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JhbANRkdEeaiGaR45MvpWw" x="-25" y="31"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JhbANRkdEeaiGaR45MvpWw" x="-9" y="31"/>
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_JhaZIRkdEeaiGaR45MvpWw" routing="Tree"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_JhaZIhkdEeaiGaR45MvpWw" fontName="Droid Sans" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JhaZIxkdEeaiGaR45MvpWw" points="[0, 0, -9, 107]$[0, -20, -9, 87]$[3, -20, -6, 87]$[3, -62, -6, 45]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JhaZIxkdEeaiGaR45MvpWw" points="[0, 0, -9, 107]$[0, -30, -9, 77]$[-4, -30, -13, 77]$[-4, -62, -13, 45]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JhbANhkdEeaiGaR45MvpWw" id="(0.47058823529411764,0.0)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JhbANxkdEeaiGaR45MvpWw" id="(0.5367647058823529,0.5459183673469388)"/>
           </edges>
