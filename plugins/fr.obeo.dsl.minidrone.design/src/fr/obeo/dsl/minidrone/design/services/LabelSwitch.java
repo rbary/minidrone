@@ -1,5 +1,6 @@
 package fr.obeo.dsl.minidrone.design.services;
 
+
 import fr.obeo.dsl.minidrone.Animation;
 import fr.obeo.dsl.minidrone.AnimationMode;
 import fr.obeo.dsl.minidrone.Audio;
@@ -34,7 +35,8 @@ public class LabelSwitch extends MiniDroneSwitch<String> {
     // Straight instruction case
     public String caseStraight(Straight straight) {
         int distance = straight.getDistance();
-        return distance+" m"; //$NON-NLS-1$
+        String label = distance+" m"; //$NON-NLS-1$
+        return label;
     }
 
     // Turn instruction case
