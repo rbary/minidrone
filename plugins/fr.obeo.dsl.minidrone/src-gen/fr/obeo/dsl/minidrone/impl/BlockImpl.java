@@ -17,12 +17,15 @@ import fr.obeo.dsl.minidrone.MiniDronePackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.obeo.dsl.minidrone.impl.BlockImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link fr.obeo.dsl.minidrone.impl.BlockImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +54,26 @@ public class BlockImpl extends AbstractInstructionImpl implements Block {
 	 * @ordered
 	 */
 	protected EList<AbstractInstruction> instructions;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,6 +111,27 @@ public class BlockImpl extends AbstractInstructionImpl implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MiniDronePackage.BLOCK__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -106,6 +151,8 @@ public class BlockImpl extends AbstractInstructionImpl implements Block {
 		switch (featureID) {
 			case MiniDronePackage.BLOCK__INSTRUCTIONS:
 				return getInstructions();
+			case MiniDronePackage.BLOCK__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,6 +170,9 @@ public class BlockImpl extends AbstractInstructionImpl implements Block {
 				getInstructions().clear();
 				getInstructions().addAll((Collection<? extends AbstractInstruction>)newValue);
 				return;
+			case MiniDronePackage.BLOCK__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,6 +188,9 @@ public class BlockImpl extends AbstractInstructionImpl implements Block {
 			case MiniDronePackage.BLOCK__INSTRUCTIONS:
 				getInstructions().clear();
 				return;
+			case MiniDronePackage.BLOCK__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,8 +205,26 @@ public class BlockImpl extends AbstractInstructionImpl implements Block {
 		switch (featureID) {
 			case MiniDronePackage.BLOCK__INSTRUCTIONS:
 				return instructions != null && !instructions.isEmpty();
+			case MiniDronePackage.BLOCK__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BlockImpl

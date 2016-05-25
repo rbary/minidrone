@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class PostureImpl extends InstructionImpl implements Posture {
+public class PostureImpl extends AbstractInstructionImpl implements Posture {
 	/**
 	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->

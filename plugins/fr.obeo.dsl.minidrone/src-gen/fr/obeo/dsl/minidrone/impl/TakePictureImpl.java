@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TakePictureImpl extends InstructionImpl implements TakePicture {
+public class TakePictureImpl extends AbstractInstructionImpl implements TakePicture {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SpeedImpl extends InstructionImpl implements Speed {
+public class SpeedImpl extends AbstractInstructionImpl implements Speed {
 	/**
 	 * The default value of the '{@link #getPercentage() <em>Percentage</em>}' attribute.
 	 * <!-- begin-user-doc -->

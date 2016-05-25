@@ -132,7 +132,10 @@ public class LoopItemProvider extends BlockItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Loop_type");
+		String label = ((Loop)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Loop_type") :
+			getString("_UI_Loop_type") + " " + label;
 	}
 	
 

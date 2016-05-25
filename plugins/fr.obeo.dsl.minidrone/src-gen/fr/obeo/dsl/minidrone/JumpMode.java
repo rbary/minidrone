@@ -48,17 +48,7 @@ public enum JumpMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HIGH(1, "HIGH", "HIGH"),
-
-	/**
-	 * The '<em><b>MAX</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MAX_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MAX(2, "MAX", "MAX");
+	HIGH(1, "HIGH", "HIGH");
 
 	/**
 	 * The '<em><b>LONG</b></em>' literal value.
@@ -91,21 +81,6 @@ public enum JumpMode implements Enumerator {
 	public static final int HIGH_VALUE = 1;
 
 	/**
-	 * The '<em><b>MAX</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>MAX</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #MAX
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MAX_VALUE = 2;
-
-	/**
 	 * An array of all the '<em><b>Jump Mode</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +90,6 @@ public enum JumpMode implements Enumerator {
 		new JumpMode[] {
 			LONG,
 			HIGH,
-			MAX,
 		};
 
 	/**
@@ -174,7 +148,6 @@ public enum JumpMode implements Enumerator {
 		switch (value) {
 			case LONG_VALUE: return LONG;
 			case HIGH_VALUE: return HIGH;
-			case MAX_VALUE: return MAX;
 		}
 		return null;
 	}

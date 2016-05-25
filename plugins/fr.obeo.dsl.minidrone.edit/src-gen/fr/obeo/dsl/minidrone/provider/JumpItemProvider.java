@@ -33,7 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class JumpItemProvider extends InstructionItemProvider {
+public class JumpItemProvider extends AbstractInstructionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

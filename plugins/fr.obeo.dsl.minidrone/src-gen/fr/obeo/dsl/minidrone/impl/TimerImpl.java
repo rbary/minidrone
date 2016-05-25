@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TimerImpl extends InstructionImpl implements Timer {
+public class TimerImpl extends AbstractInstructionImpl implements Timer {
 	/**
 	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->

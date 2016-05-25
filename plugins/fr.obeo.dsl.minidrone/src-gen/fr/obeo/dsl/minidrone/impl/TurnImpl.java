@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TurnImpl extends InstructionImpl implements Turn {
+public class TurnImpl extends AbstractInstructionImpl implements Turn {
 	/**
 	 * The default value of the '{@link #getAngle() <em>Angle</em>}' attribute.
 	 * <!-- begin-user-doc -->

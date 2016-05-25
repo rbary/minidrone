@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class RecordVideoImpl extends InstructionImpl implements RecordVideo {
+public class RecordVideoImpl extends AbstractInstructionImpl implements RecordVideo {
 	/**
 	 * The default value of the '{@link #isEnable() <em>Enable</em>}' attribute.
 	 * <!-- begin-user-doc -->

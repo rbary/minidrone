@@ -23,7 +23,7 @@ package fr.obeo.dsl.minidrone;
  *
  *
  * @see fr.obeo.dsl.minidrone.MiniDronePackage#getInstruction()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface Instruction extends AbstractInstruction {

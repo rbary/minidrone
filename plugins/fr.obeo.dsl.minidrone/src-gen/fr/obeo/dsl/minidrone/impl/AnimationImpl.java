@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AnimationImpl extends InstructionImpl implements Animation {
+public class AnimationImpl extends AbstractInstructionImpl implements Animation {
 	/**
 	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->

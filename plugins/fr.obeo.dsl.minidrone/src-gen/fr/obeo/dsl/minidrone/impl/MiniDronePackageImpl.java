@@ -506,6 +506,15 @@ public class MiniDronePackageImpl extends EPackageImpl implements MiniDronePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBlock_Name() {
+		return (EAttribute)blockEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAbstractInstruction() {
 		return abstractInstructionEClass;
 	}
@@ -684,6 +693,7 @@ public class MiniDronePackageImpl extends EPackageImpl implements MiniDronePacka
 
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__INSTRUCTIONS);
+		createEAttribute(blockEClass, BLOCK__NAME);
 
 		abstractInstructionEClass = createEClass(ABSTRACT_INSTRUCTION);
 
@@ -758,7 +768,7 @@ public class MiniDronePackageImpl extends EPackageImpl implements MiniDronePacka
 		initEAttribute(getMiniDroneProgram_AudioMode(), this.getAudioMode(), "audioMode", null, 0, 1, MiniDroneProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMiniDroneProgram_PostureMode(), this.getPostureMode(), "postureMode", null, 0, 1, MiniDroneProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(straightEClass, Straight.class, "Straight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStraight_Distance(), ecorePackage.getEInt(), "distance", null, 0, 1, Straight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -788,6 +798,7 @@ public class MiniDronePackageImpl extends EPackageImpl implements MiniDronePacka
 
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Instructions(), this.getAbstractInstruction(), null, "instructions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractInstructionEClass, AbstractInstruction.class, "AbstractInstruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -807,7 +818,6 @@ public class MiniDronePackageImpl extends EPackageImpl implements MiniDronePacka
 		initEEnum(jumpModeEEnum, JumpMode.class, "JumpMode");
 		addEEnumLiteral(jumpModeEEnum, JumpMode.LONG);
 		addEEnumLiteral(jumpModeEEnum, JumpMode.HIGH);
-		addEEnumLiteral(jumpModeEEnum, JumpMode.MAX);
 
 		initEEnum(postureModeEEnum, PostureMode.class, "PostureMode");
 		addEEnumLiteral(postureModeEEnum, PostureMode.JUMPER);

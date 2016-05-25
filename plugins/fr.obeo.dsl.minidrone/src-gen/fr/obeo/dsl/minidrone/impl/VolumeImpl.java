@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class VolumeImpl extends InstructionImpl implements Volume {
+public class VolumeImpl extends AbstractInstructionImpl implements Volume {
 	/**
 	 * The default value of the '{@link #getPercentage() <em>Percentage</em>}' attribute.
 	 * <!-- begin-user-doc -->

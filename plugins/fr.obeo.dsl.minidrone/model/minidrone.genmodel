@@ -12,7 +12,6 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//JumpMode">
       <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpMode/LONG"/>
       <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpMode/HIGH"/>
-      <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//JumpMode/MAX"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="minidrone.ecore#//PostureMode">
       <genEnumLiterals ecoreEnumLiteral="minidrone.ecore#//PostureMode/JUMPER"/>
@@ -71,6 +70,7 @@
     </genClasses>
     <genClasses ecoreClass="minidrone.ecore#//Block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference minidrone.ecore#//Block/instructions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute minidrone.ecore#//Block/name"/>
     </genClasses>
     <genClasses ecoreClass="minidrone.ecore#//AbstractInstruction"/>
     <genClasses ecoreClass="minidrone.ecore#//Animation">

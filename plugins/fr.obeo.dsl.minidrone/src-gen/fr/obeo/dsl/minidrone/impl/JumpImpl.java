@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class JumpImpl extends InstructionImpl implements Jump {
+public class JumpImpl extends AbstractInstructionImpl implements Jump {
 	/**
 	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->

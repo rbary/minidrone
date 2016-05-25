@@ -177,10 +177,10 @@ public interface MiniDronePackage extends EPackage {
 	int ABSTRACT_INSTRUCTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link fr.obeo.dsl.minidrone.impl.InstructionImpl <em>Instruction</em>}' class.
+	 * The meta object id for the '{@link fr.obeo.dsl.minidrone.Instruction <em>Instruction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.obeo.dsl.minidrone.impl.InstructionImpl
+	 * @see fr.obeo.dsl.minidrone.Instruction
 	 * @see fr.obeo.dsl.minidrone.impl.MiniDronePackageImpl#getInstruction()
 	 * @generated
 	 */
@@ -548,13 +548,22 @@ public interface MiniDronePackage extends EPackage {
 	int BLOCK__INSTRUCTIONS = ABSTRACT_INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK__NAME = ABSTRACT_INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_FEATURE_COUNT = ABSTRACT_INSTRUCTION_FEATURE_COUNT + 1;
+	int BLOCK_FEATURE_COUNT = ABSTRACT_INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Block</em>' class.
@@ -620,6 +629,15 @@ public interface MiniDronePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOOP__INSTRUCTIONS = BLOCK__INSTRUCTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP__NAME = BLOCK__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1049,6 +1067,17 @@ public interface MiniDronePackage extends EPackage {
 	EReference getBlock_Instructions();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.obeo.dsl.minidrone.Block#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fr.obeo.dsl.minidrone.Block#getName()
+	 * @see #getBlock()
+	 * @generated
+	 */
+	EAttribute getBlock_Name();
+
+	/**
 	 * Returns the meta object for class '{@link fr.obeo.dsl.minidrone.AbstractInstruction <em>Abstract Instruction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1264,10 +1293,10 @@ public interface MiniDronePackage extends EPackage {
 		EAttribute MINI_DRONE_PROGRAM__POSTURE_MODE = eINSTANCE.getMiniDroneProgram_PostureMode();
 
 		/**
-		 * The meta object literal for the '{@link fr.obeo.dsl.minidrone.impl.InstructionImpl <em>Instruction</em>}' class.
+		 * The meta object literal for the '{@link fr.obeo.dsl.minidrone.Instruction <em>Instruction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.obeo.dsl.minidrone.impl.InstructionImpl
+		 * @see fr.obeo.dsl.minidrone.Instruction
 		 * @see fr.obeo.dsl.minidrone.impl.MiniDronePackageImpl#getInstruction()
 		 * @generated
 		 */
@@ -1444,6 +1473,14 @@ public interface MiniDronePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BLOCK__INSTRUCTIONS = eINSTANCE.getBlock_Instructions();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BLOCK__NAME = eINSTANCE.getBlock_Name();
 
 		/**
 		 * The meta object literal for the '{@link fr.obeo.dsl.minidrone.impl.AbstractInstructionImpl <em>Abstract Instruction</em>}' class.

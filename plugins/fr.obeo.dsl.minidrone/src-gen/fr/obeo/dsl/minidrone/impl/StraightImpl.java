@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class StraightImpl extends InstructionImpl implements Straight {
+public class StraightImpl extends AbstractInstructionImpl implements Straight {
 	/**
 	 * The default value of the '{@link #getDistance() <em>Distance</em>}' attribute.
 	 * <!-- begin-user-doc -->

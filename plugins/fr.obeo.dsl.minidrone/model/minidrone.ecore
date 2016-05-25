@@ -18,7 +18,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="audioMode" eType="#//AudioMode"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="postureMode" eType="#//PostureMode"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true" eSuperTypes="#//AbstractInstruction">
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true" interface="true"
+      eSuperTypes="#//AbstractInstruction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represent a program instruction used to send command to the minidrone."/>
     </eAnnotations>
@@ -59,7 +60,6 @@
     </eAnnotations>
     <eLiterals name="LONG"/>
     <eLiterals name="HIGH" value="1"/>
-    <eLiterals name="MAX" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PostureMode">
     <eLiterals name="JUMPER"/>
@@ -91,6 +91,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//AbstractInstruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
         eType="#//AbstractInstruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractInstruction" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Animation" eSuperTypes="#//Instruction">
