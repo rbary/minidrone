@@ -24,13 +24,12 @@ public class LabelSwitch extends MiniDroneSwitch<String> {
 
     // Block instruction case
     public String caseBlock(Block block) {
-        String label = "Block "+block.getName(); //$NON-NLS-1$
-        return label; 
+        return block.getName();
     }
 
     // Loop instruction case
     public String caseLoop(Loop loop) {
-        return "while (" + loop.getCondition().getExpression() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
+        return "While (" + loop.getCondition().getExpression() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     // Straight instruction case
