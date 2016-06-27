@@ -19,20 +19,20 @@
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_End" semanticCandidatesExpression="aql:self" domainClass="minidrone.MiniDroneProgram">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="LEFT" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/End_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="LEFT" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/End_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_Take_Picture" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.TakePicture">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="LEFT" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Take_Picture_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="LEFT" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/Take_Picture_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_Record_Video" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='RecordVideo']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.RecordVideo">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Record_Video_True_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/Record_Video_True_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
@@ -53,14 +53,14 @@
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_Animation" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Animation']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Animation">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Animation_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/Animation_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_Speed" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Speed']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Speed">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Speed_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/Speed_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
@@ -81,14 +81,14 @@
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_Volume" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Volume']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Volume">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Volume_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/Volume_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="MPD_Audio" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='MiniDrone%20Program%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Audio']" semanticCandidatesExpression="feature:instructions" domainClass="minidrone.Audio">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/fr.obeo.dsl.minidrone.design/images/Audio_64px.svg">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computeLabel()" labelAlignment="LEFT" sizeComputationExpression="-1" workspacePath="/fr.obeo.dsl.minidrone.design/images/Audio_64px.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
