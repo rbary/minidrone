@@ -31,7 +31,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 
 import fr.obeo.dsl.minidrone.MiniDroneProgram;
-import fr.obeo.dsl.minidrone.gen.main.Generate;
+import fr.obeo.dsl.minidrone.gen.main.Genfiles;
 import fr.obeo.dsl.minidrone.ui.MinidroneUiActivator;
 
 /**
@@ -60,7 +60,7 @@ public class MinidroneServices {
 
 		try {
 			// perform a acceleo C generation in the output folder
-			Generate generator = new Generate(minidroneProgram.eResource().getURI(), genOutputFolder,
+			Genfiles generator = new Genfiles(minidroneProgram.eResource().getURI(), genOutputFolder,
 					new ArrayList<Object>());
 			generator.doGenerate(new BasicMonitor());
 		} catch (IOException e) {
