@@ -7,86 +7,73 @@
  *			Piloting
  *
  *****************************************/
-[for (ai : AbstractInstruction  | minidroneProgram.instructions)]
-	[if (ai.oclIsKindOf(Straight))]
-	[ai.genStraight()/]
-	[/if]
-	[if (ai.oclIsKindOf(Turn))]
-	[ai.genTurn()/]
-	[/if]
-	[if (ai.oclIsKindOf(Jump))]
-	[ai.genJump()/]
-	[/if]
-	[if (ai.oclIsKindOf(Timer))]
-	[ai.genTimer()/]
-	[/if]
-	[if (ai.oclIsKindOf(Speed))]
-	[ai.genSpeed()/]
-	[/if]
-	[if (ai.oclIsKindOf(Posture))]
-	[ai.genPosture()/]
-	[/if]
-	[if (ai.oclIsKindOf(Animation))]
-	[ai.genAnimation()/]
-	[/if]
-	[if (ai.oclIsKindOf(Audio))]
-	[ai.genAudio()/]
-	[/if]
-	[if (ai.oclIsKindOf(Volume))]
-	[ai.genVolume()/]
-	[/if]
-	[if (ai.oclIsKindOf(Block))]
-	[ai.genBlock()/]
+[for (ai : AbstractInstruction | minidroneProgram.instructions)]
+	[if (ai.oclIsKindOf(Instruction))]
+	[ai.oclAsType(Instruction).genInstruction()  /]
+	[else]
+	[ai.genAbstractInstruction()/]
 	[/if]
 [/for]
 [/template]
 
-[template public genStraight(ai : AbstractInstruction)]
+
+[template public genInstruction(straight : Straight)]
 // straight command
-straight(deviceController, [ai.oclAsType(Straight).distance/]);
+straight(deviceController, [straight.distance/]);
 [/template]
 
-[template public genTurn(ai: AbstractInstruction)]
-//turn command
-turn(deviceController, [ai.oclAsType(Turn).angle/]);
+[template public genInstruction(turn : Turn)]
+// turn command
+turn(deviceController, [turn.angle/]);
 [/template]
 
-[template public genJump(ai: AbstractInstruction)]
-//jump command
-jump(deviceController, [ai.oclAsType(Jump).mode/]);
+[template public genInstruction(jump : Jump)]
+// jump command
+straight(deviceController, [jump.mode/]);
 [/template]
 
-[template public genTimer(ai: AbstractInstruction)]
-//timer command
-timer(deviceController, [ai.oclAsType(Timer).duration/]);
+[template public genInstruction(timer : Timer)]
+// timer command
+timer(deviceController, [timer.duration/]);
 [/template]
 
-[template public genSpeed(ai: AbstractInstruction)]
-//speed command
-speed(deviceController, [ai.oclAsType(Speed).percentage/]);
+[template public genInstruction(speed : Speed)]
+// speed command
+speed(deviceController, [speed.percentage/]);
 [/template]
 
-[template public genPosture(ai: AbstractInstruction)]
-//posture command
-posture(deviceController, [ai.oclAsType(Posture).mode/]);
+[template public genInstruction(posture : Posture)]
+// posture command
+posture(deviceController, [posture.mode/]);
 [/template]
 
-[template public genAnimation(ai: AbstractInstruction)]
-//animation command
-animation(deviceController, [ai.oclAsType(Animation).mode/]);
+[template public genInstruction(animation : Animation)]
+// animation command
+animation(deviceController, [animation.mode/]);
 [/template]
 
-[template public genAudio(ai: AbstractInstruction)]
-//audio command
-audio(deviceController, [ai.oclAsType(Audio).mode/]);
+[template public genInstruction(audio : Audio)]
+// audio command
+audio(deviceController, [audio.mode/]);
 [/template]
 
-[template public genVolume(ai: AbstractInstruction)]
-//volume command
-volume(deviceController, [ai.oclAsType(Volume).percentage/]);
+[template public genInstruction(volume : Volume)]
+// volume command
+volume(deviceController, [volume.percentage/]);
 [/template]
 
-[template public genBlock(ai : AbstractInstruction)]
-// block instruction
-[ai.oclAsType(Block).name/]();
+[template public genAbstractInstruction(block : Block)]
+// block command
+[block.name/]();
 [/template]
+
+[comment Generic case for Instruction /]
+[template public genInstruction(instruction : Instruction)]
+// this would not happen [instruction/]
+[/template]
+
+[comment Generic case for AbstractInstruction /]
+[template public genAbstractInstruction(abstractInstruction : AbstractInstruction)]
+// this would not happen [abstractInstruction/]
+[/template]
+

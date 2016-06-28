@@ -23,29 +23,16 @@
  *             private implementations
  *
  *****************************************/
-void pegasus (){
+void Zheta (){
 	// straight command
 	straight(deviceController, 0);
-	//jump command
-	jump(deviceController, LONG);
-	//turn command
+	// turn command
 	turn(deviceController, 0);
-	// block instruction
-	Zheta ();
+	// block command
+	Cassiopea();
 }
 
-void Zheta (){
-	//turn command
-	turn(deviceController, 0);
-	//jump command
-	jump(deviceController, LONG);
-	// block instruction
-	canis ();
-}
-
-void canis (){
-	//jump command
-	jump(deviceController, LONG);
+void Cassiopea (){
 }
 
 
@@ -97,12 +84,8 @@ if (!error) {
  *****************************************/
 	// straight command
 	straight(deviceController, 0);
-	//turn command
-	turn(deviceController, 0);
-	//jump command
-	jump(deviceController, LONG);
-	// block instruction
-	pegasus();
+	// block command
+	Zheta();
 
 /*****************************************
  *
