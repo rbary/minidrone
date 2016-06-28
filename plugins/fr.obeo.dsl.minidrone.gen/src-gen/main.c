@@ -20,6 +20,38 @@
 
 /*****************************************
  *
+ *             private implementations
+ *
+ *****************************************/
+void pegasus (){
+	// straight command
+	straight(deviceController, 0);
+	//jump command
+	jump(deviceController, LONG);
+	//turn command
+	turn(deviceController, 0);
+	// block instruction
+	Zheta ();
+}
+
+void Zheta (){
+	//turn command
+	turn(deviceController, 0);
+	//jump command
+	jump(deviceController, LONG);
+	// block instruction
+	canis ();
+}
+
+void canis (){
+	//jump command
+	jump(deviceController, LONG);
+}
+
+
+
+/*****************************************
+ *
  *             main implementation
  *
  *****************************************/
@@ -31,48 +63,52 @@ int main(int argc, char **argv) {
 	eARCONTROLLER_DEVICE_STATE deviceState;
 	ARDISCOVERY_Device_t *discoveryDevice = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
-		/*****************************************
-		 *
-		 *   		Initialization
-		 *
-		 *****************************************/
-	
-		ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- JSPilotingMinimal --");
-	
-		// Create new discovery device
-		if (!error) {
-			discoveryDevice = createInitDiscoveryDevice();
-			if (discoveryDevice == NULL) {
-				error = 1;
-			}
-		}
-	
-		// Create new device controller
-		if (!error) {
-			deviceController = createDeviceController(discoveryDevice);
-			if (discoveryDevice == NULL) {
-				error = 1;
-			}
-		}
-	
-		if (!error) {
-			error = startDeviceController(deviceController);
-		}
-	/*****************************************
-	 *
-	 *			Piloting
-	 *
-	 *****************************************/
-			// straight command
-			straight(deviceController, 8);
-			//turn command
-			turn(deviceController, 180);
-	
-	/*****************************************
-	 *
-	 *			End
-	 *
-	 *****************************************/
-	stopDeviceController(deviceController);
+/*****************************************
+ *
+ *   		Initialization
+ *
+ *****************************************/
+
+ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- JSPilotingMinimal --");
+
+// Create new discovery device
+if (!error) {
+	discoveryDevice = createInitDiscoveryDevice();
+	if (discoveryDevice == NULL) {
+		error = 1;
+	}
+}
+
+// Create new device controller
+if (!error) {
+	deviceController = createDeviceController(discoveryDevice);
+	if (discoveryDevice == NULL) {
+		error = 1;
+	}
+}
+
+if (!error) {
+	error = startDeviceController(deviceController);
+}
+/*****************************************
+ *
+ *			Piloting
+ *
+ *****************************************/
+	// straight command
+	straight(deviceController, 0);
+	//turn command
+	turn(deviceController, 0);
+	//jump command
+	jump(deviceController, LONG);
+	// block instruction
+	pegasus();
+
+/*****************************************
+ *
+ *			End
+ *
+ *****************************************/
+stopDeviceController(deviceController);
 	return EXIT_SUCCESS;
 }

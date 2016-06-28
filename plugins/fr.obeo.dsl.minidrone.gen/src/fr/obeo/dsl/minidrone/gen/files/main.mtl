@@ -13,6 +13,7 @@
 [import fr::obeo::dsl::minidrone::gen::files::piloting /]
 [import fr::obeo::dsl::minidrone::gen::files::initDeviceController /]
 [import fr::obeo::dsl::minidrone::gen::files::stopDeviceController /]
+[import fr::obeo::dsl::minidrone::gen::files::block /]
 
 [template public genMain(minidroneProgram : MiniDroneProgram)]
 [file ('main.c', false, 'UTF-8')]
@@ -38,6 +39,13 @@
 
 /*****************************************
  *
+ *             private implementations
+ *
+ *****************************************/
+[minidroneProgram.genBlockFunction()/]
+
+/*****************************************
+ *
  *             main implementation
  *
  *****************************************/
@@ -49,9 +57,9 @@ int main(int argc, char **argv) {
 	eARCONTROLLER_DEVICE_STATE deviceState;
 	ARDISCOVERY_Device_t *discoveryDevice = NULL;
 	ARCONTROLLER_Device_t *deviceController = NULL;
-	[minidroneProgram.genInitDeviceController()/]
-	[minidroneProgram.genPiloting()/]
-	[minidroneProgram.genStopDeviceController()/]
+[minidroneProgram.genInitDeviceController()/]
+[minidroneProgram.genPiloting()/]
+[minidroneProgram.genStopDeviceController()/]
 	return EXIT_SUCCESS;
 }
 [/file]

@@ -12,31 +12,31 @@
 
 
 [template public genInitDeviceController(minidroneProgram : MiniDroneProgram)]
-	/*****************************************
-	 *
-	 *   		Initialization
-	 *
-	 *****************************************/
+/*****************************************
+ *
+ *   		Initialization
+ *
+ *****************************************/
 
-	ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- JSPilotingMinimal --");
+ARSAL_PRINT(ARSAL_PRINT_INFO, TAG_MAIN, "-- JSPilotingMinimal --");
 
-	// Create new discovery device
-	if (!error) {
-		discoveryDevice = createInitDiscoveryDevice();
-		if (discoveryDevice == NULL) {
-			error = 1;
-		}
+// Create new discovery device
+if (!error) {
+	discoveryDevice = createInitDiscoveryDevice();
+	if (discoveryDevice == NULL) {
+		error = 1;
 	}
+}
 
-	// Create new device controller
-	if (!error) {
-		deviceController = createDeviceController(discoveryDevice);
-		if (discoveryDevice == NULL) {
-			error = 1;
-		}
+// Create new device controller
+if (!error) {
+	deviceController = createDeviceController(discoveryDevice);
+	if (discoveryDevice == NULL) {
+		error = 1;
 	}
+}
 
-	if (!error) {
-		error = startDeviceController(deviceController);
-	}
+if (!error) {
+	error = startDeviceController(deviceController);
+}
 [/template]
