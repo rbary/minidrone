@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2008, 2012 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package fr.obeo.dsl.minidrone.gen.main;
+package fr.obeo.dsl.minidrone.gen.files;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,24 +25,24 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
- * Entry point of the 'Generate' generation module.
+ * Entry point of the 'Main' generation module.
  *
  * @generated
  */
-public class Generate extends AbstractAcceleoGenerator {
+public class Main extends AbstractAcceleoGenerator {
     /**
      * The name of the module.
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/fr/obeo/dsl/minidrone/gen/main/generate";
+    public static final String MODULE_FILE_NAME = "/fr/obeo/dsl/minidrone/gen/common/main";
     
     /**
      * The name of the templates that are to be generated.
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "genElement", "genMakefile", "genHeader", "genSource" };
+    public static final String[] TEMPLATE_NAMES = { "genMain" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
@@ -65,7 +65,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public Generate() {
+    public Main() {
         // Empty implementation
     }
 
@@ -85,7 +85,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *             the model cannot be loaded.
      * @generated
      */
-    public Generate(URI modelURI, File targetFolder,
+    public Main(URI modelURI, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(modelURI, targetFolder, arguments);
     }
@@ -106,7 +106,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *             This can be thrown in two scenarios : the module cannot be found, or it cannot be loaded.
      * @generated
      */
-    public Generate(EObject model, File targetFolder,
+    public Main(EObject model, File targetFolder,
             List<? extends Object> arguments) throws IOException {
         initialize(model, targetFolder, arguments);
     }
@@ -141,7 +141,7 @@ public class Generate extends AbstractAcceleoGenerator {
                  * add in "arguments" this "String" attribute.
                  */
                 
-                Generate generator = new Generate(modelURI, folder, arguments);
+                Main generator = new Main(modelURI, folder, arguments);
                 
                 /*
                  * Add the properties from the launch arguments.

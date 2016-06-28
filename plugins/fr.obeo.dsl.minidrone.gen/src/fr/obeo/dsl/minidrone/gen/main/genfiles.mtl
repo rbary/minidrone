@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module genfiles('http://www.obeo.fr/dsl/minidrone/1.0.0')/]
+
+[import fr::obeo::dsl::minidrone::gen::files::jsPilotingHeaders /]
+[import fr::obeo::dsl::minidrone::gen::files::jsPilotingSources /]
+[import fr::obeo::dsl::minidrone::gen::files::makefile /]
+[import fr::obeo::dsl::minidrone::gen::files::main /]
+
+[template public genfiles(minidroneProgram : MiniDroneProgram)]
+[comment @main /]
+	[minidroneProgram.genHeaders()/]
+	[minidroneProgram.genSources()/]
+	[minidroneProgram.genMain()/]
+	[minidroneProgram.genMakefile()/]
+[/template]

@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module stopDeviceController('http://www.obeo.fr/dsl/minidrone/1.0.0')]
+
+
+[template public genStopDeviceController(aMiniDroneProgram : MiniDroneProgram)]
+/*****************************************
+ *
+ *			End
+ *
+ *****************************************/
+stopDeviceController(deviceController);
+[/template]
