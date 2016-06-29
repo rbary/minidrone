@@ -75,4 +75,11 @@
             targetID="fr.obeo.dsl.minidrone.ui.perspective">
       </perspectiveExtension>
    </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="fr.obeo.dsl.minidrone.ui.category"
+            name="minidrone">
+      </category>
+   </extension>
 </plugin>
