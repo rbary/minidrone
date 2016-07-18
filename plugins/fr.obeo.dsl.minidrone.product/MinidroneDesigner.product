@@ -25,7 +25,10 @@
    <windowImages i16="/fr.obeo.dsl.minidrone.application/icons/logo_16.gif" i32="/fr.obeo.dsl.minidrone.application/icons/logo_32.gif" i64="/fr.obeo.dsl.minidrone.application/icons/logo_64.gif"/>
 
    <splash
-      location="fr.obeo.dsl.minidrone.application" />
+      location="fr.obeo.dsl.minidrone.application"
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="555753" />
    <launcher name="MinidroneDesigner">
       <solaris/>
       <win useIco="false">

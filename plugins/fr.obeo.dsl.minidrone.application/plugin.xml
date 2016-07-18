@@ -16,14 +16,14 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="fr.obeo.dsl.minidrone.application.application"
-            name="Minidrone Designer">
+            name="Minidrone-Designer">
          <property
                name="applicationCSS"
                value="platform:/plugin/fr.obeo.dsl.minidrone.application/default.css">
          </property>
          <property
                name="appName"
-               value="Minidrone Designer">
+               value="Minidrone-Designer">
          </property>
          <property
                name="aboutImage"

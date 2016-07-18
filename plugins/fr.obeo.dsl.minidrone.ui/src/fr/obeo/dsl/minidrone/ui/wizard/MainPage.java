@@ -1,3 +1,15 @@
+/**
+ * Copyright (c) 2016 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ * Obeo - initial API and implementation
+ * 
+ */
+
 package fr.obeo.dsl.minidrone.ui.wizard;
 
 import org.eclipse.jface.wizard.WizardPage;
@@ -5,6 +17,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Text;
@@ -12,12 +25,12 @@ import org.eclipse.swt.widgets.Text;
 public class MainPage extends WizardPage {
 	private Composite container;
 	private Text projectName;
+	private Label projectNameLabel;
 	
-
 	public MainPage() {
-		super("Create a new Minidrone Project");
-		setTitle("Create a new Minidrone Project");
-		setDescription("Enter a project name");
+		super("Create a new minidrone program design project");
+		setTitle("Minidrone project");
+		setDescription("Create a new minidrone program design project");
 	}
 
 	@Override
@@ -27,6 +40,11 @@ public class MainPage extends WizardPage {
 		container.setLayout(layout);
 		layout.numColumns = 2;
 		
+		// set the label
+		projectNameLabel = new Label(container, INFORMATION);
+		projectNameLabel.setText("Project name : ");
+		
+		// set the Text in the container
 		projectName = new Text(container, SWT.BORDER | SWT.SINGLE);
 		projectName.setText("");
 		projectName.addKeyListener(new KeyListener() {
@@ -50,7 +68,6 @@ public class MainPage extends WizardPage {
 		setPageComplete(false);
 	}
 
-	
 	public Text getProjectName() {
 		return projectName;
 	}
