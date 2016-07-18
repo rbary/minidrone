@@ -9,7 +9,7 @@
  *****************************************/
 [for (ai : AbstractInstruction | minidroneProgram.instructions)]
 	[if (ai.oclIsKindOf(Instruction))]
-	[ai.oclAsType(Instruction).genInstruction()  /]
+	[ai.oclAsType(Instruction).genInstruction()/]
 	[else]
 	[ai.genAbstractInstruction()/]
 	[/if]
